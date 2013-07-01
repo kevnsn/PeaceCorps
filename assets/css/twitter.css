@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+.load-more.customisable {
+/*bottom: 255px;*/
+bottom:55px;
+position:relative;
+display: block;
+z-index: 99999;
+background-color: #FFF;}
+
+.timeline-footer {
+display: block;
+/*bottom: 255px;*/
+bottom:55px;
+background: #E8E8E8;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Peace Corps - Video</title>
+<script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="assets/js/youmax.min.js"></script> 
+<script type="text/javascript">
+ //youtube channel URL (mandatory) -----------------------------
+ var youTubeChannelURL = "http://www.youtube.com/user/peacecorps";
+  
+ //optional parameter-----------------------------------------------
+ var youTubePlaylistURL = "http://www.youtube.com/playlist?list=PL2B90BEBDEE4842E2";
+ var youmaxDefaultTab = "uploads";
+ var youmaxColumns;
+ console.log(window.outerWidth);
+ if( window.outerWidth<500)
+ 	{ youmaxColumns = 2; }
+	else if( window.outerWidth<800)
+ 	{ youmaxColumns = 3; } 
+	else
+ 	{ youmaxColumns = 4; } 
+ var youmaxWidgetWidth = 1000;
+ //var youmaxWidgetHeight = 1000;
+ var showFeaturedVideoOnLoad = false;
+ var showVideoInLightbox = false;
+</script>
+
+<style>
+body {margin:0;}
+
+#videocontainer{
+	width:100%;
+	text-align:center;
+}
+#youmax{width:100% !important;}
+
+@media screen and (max-width: 245px) {
+  #youmax-stat-holder {
+    display:none !important;
+  }
+  /*
+For background color of the container with videos -
+#youmax-video-list-div{background-color:rgb(53,53,53) !important;}
+For color of the video title -
+.youmax-video-list-title{color:white !important;}
+For color of the video view/date -
+.youmax-video-list-views{color:green !important;}
+For background color of tabs-
+#youmax-tabs{background-color:rgb(53,53,53) !important;}
+For background color of header-
+#youmax-header{background-color:black !important;}
+*/
+}
+
+</style>
+</head>
+
+<body>
+    <div id= "videocontainer">
+        <div id = "youmax">
+        </div>
+    </div>
+   
+</body>
+</html>

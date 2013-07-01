@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+/* Smartphones (portrait) ----------- */
+@media max-width : 790px) {
+/* Styles */
+body {padding:0px !important;margin:0px !important;overflow-x:hidden; overflow-y: auto;}
+
+div#page {margin-top:-2px !important;}
+.page-title {margin-bottom:1.5em !important;}
+#menu-item-224 {display:none !important;}
+.entry-meta {padding-right:0px;}
+#content {margin:0 3% !important;width:100% !important;}
+h1 {font-size:22px !important; padding-top:0px!important;line-height:1em !important;}
+.entry-header hgroup .entry-title {line-height:1em;}
+.entry-title a { font-size:16px !important; font-weight:600 !important; line-height:1em !important;}
+
+#primary, #secondary 
+{margin:0 6%;width:auto;}
+
+
+#infinite-handle span {
+	display:none;
+}
+
+
+#site-generator {
+	display:none;
+}
+}

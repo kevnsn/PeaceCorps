@@ -1,0 +1,90 @@
+#donatebutton {
+	float:right;
+}
+
+.localcontentpanel{
+padding:15px !important;
+min-width:100%;
+min-height:100%;}
+
+h1 {
+	font-family: 'EB Garamond', serif !important;
+	font-size:22px !important;
+	text-shadow:rgba(0,0,0,1) 1px 1px 2px;
+	margin-bottom:5px !important;
+	/*background-image: url('../../icon.gif');
+	background-repeat: no-repeat;
+	background-size: 36px;
+	background-position-x: 100px;
+	background-position-y: 5px;*/
+
+}
+.localcontentpanel h2 {
+font-family: 'EB Garamond', serif !important;
+font-size:22px !important;
+text-shadow:none;	
+border-width:1px;
+/*border-style:solid;*/
+/*border-color:transparent transparent #DBD8C5 transparent;*/
+/*top left bottom right */
+}
+
+ /* Info page styling */
+#mainmenu {margin-top:30px !important; margin-bottom:15px !important;}
+
+.submenu{margin-top:30px !important;}
+
+#navbar {
+	text-shadow:none;
+}
+
+#navbar .icon {}
+
+#navbar a {top:-1px !important; height:49px!important; width:55px !important;font:normal 11px/75px Arial, Helvetica, sans-serif !important;}
+
+#navbar .icon:before {
+top: -15px !important;
+left: -4.75px !important;
+font-size: 31.5px !important;
+line-height: 55px !important;
+}
+
+footer {
+	text-align:center;
+}
+
+footer .horzRule { margin:0px auto;}
+
+.panel {padding:0px !important;}
+
+/*  Loading Bar */
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .7 ) 
+                url('../img/loading.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}

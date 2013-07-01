@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title>Peace Corps</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Import CSS -->
+<link rel="stylesheet" type="text/css" href="assets/css/icons.css" /> 
+<link rel="stylesheet" type="text/css" href="assets/css/af.ui.base.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/af.ui.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/master.css" /> 
+
+<!-- Import Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+<!-- Import Javascript -->
+<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="assets/js/ui/appframework.ui.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
+<!-- Import jqMobi plugins -->
+
+
+<!-- Initilization Javascript -->
+<script type="text/javascript">
+        $.ui.autoLaunch = true; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
+        /* This function runs when the body is loaded.*/
+        var init = function () {
+        	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
+			
+        };
+        document.addEventListener("DOMContentLoaded", init, false);
+        
+		$.ui.ready(function () {
+						console.log("ui launch");
+			
+            //This function will get executed when $.ui.launch has completed
+        });
+    </script>
+</head>
+	<body>
+        <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
+            <!-- this is the header div at the top -->
+            <div id="header">
+                <!--<a href="javascript:$.ui.toggleSideMenu()" class="button" style="float:right">Toggle Nav</a>-->
+               <!-- <a id="backbutton" href="javascript:;" class="button">Back</a>-->
+                <h1>Peace Corps Passport</h1>
+                <!--<a id="donatebutton" href="#donate" class="button icon heart mini">Donate</a>-->
+            </div>
+            <div id="content">
+                <!-- here is where you can add your panels -->
+                <div title='Blog' id="main" class="panel" selected="true" data-load="updateBlog">
+                  <script> 
+			function updateBlog(div){ 
+			if(document.getElementById('blogframe').src!="http://passport.peacecorps.gov/"){ document.getElementById('blogframe').src = "http://passport.peacecorps.gov/";}}   
+			function mobilizeBlog(div){
+			console.log ("injecting css to blog page");
+			var cssLink = document.createElement("link");
+			cssLink.href="assets/css/blog.css";
+			cssLink.rel="stylesheet";
+			cssLink.type="text/css";
+			var doc = document.getElementById("blogframe").contentWindow.document;
+			console.log(cssLink);
+			doc.body.appendChild(cssLink);
+			console.log(doc);
+            } 
+                </script>
+            
+                    <header>
+                        <h1>Peace Corps Passport</h1>
+                       <!-- <a id="donatebutton" href="#donate" class="button icon heart mini">Donate</a>-->
+                     </header>
+                    <div class="icontainer">
+                        <iframe src="http://passport.peacecorps.gov/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="blogframe" onLoad="mobilizeBlog(this);">
+                        Your browser doesn't support iFrames.</iframe>
+                    </div>
+                </div>
+                
+                <div title='Information' id="info" class="panel"data-defer="info.html">
+                </div>
+                <div title='History' id="history" class="panel"data-defer="history.html">
+                </div>
+                <div title='Eligibility' id="eligibility" class="panel"data-defer="eligibility.html">
+                </div>
+                <div title='Application' id="application" class="panel"data-defer="application.html">
+                </div>
+                <div title='Qualifications' id="qualifications" class="panel"data-defer="qualifications.html">
+                </div>
+                <div title='Benefits' id="benefits" class="panel"data-defer="benefits.html">
+                </div>
+                
+                <div title='Video' id="video" class="panel" data-load="updateVid" >
+                <script> function updateVid(div){document.getElementById('videoframe').contentWindow.prepareYoumax();} 
+             
+            </script>
+                    <header>
+                        <h1>Peace Corps Video</h1>
+                        <!--<a id="backbutton" href="javascript:;" class="button">Back</a>-->
+                    </header>
+                    <div class="icontainer">
+                        <iframe id="videoframe" src="video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%">Your browser doesn't support iFrames.</iframe>
+                    </div>
+                </div>
+           <div title='Social' id="social" class="panel" data-load="updateTwitter" data-defer="twitter.html">
+<script> function updateTwitter(div){$(".twitter-timeline").attr("height",window.innerHeight-90).attr("width",window.innerWidth);
+		console.log ("injecting css to twitter");
+			var cssLink = document.createElement("link");
+			cssLink.href="assets/css/twitter.css";
+			cssLink.rel="stylesheet";
+			cssLink.type="text/css";
+			var doc = document.getElementById("twitter-widget-0").contentWindow.document;
+			console.log(cssLink);
+			doc.body.appendChild(cssLink);
+			console.log(doc);
+			} </script>
+           </div>
+                
+                <div title='Donate' id="donate" class="panel" data-load="updateDonate" data-nav="donate_nav">
+           <script>
+		    function updateDonate(div){
+            if(document.getElementById('donateframe').src!="http://www.peacecorps.gov/about/give/"){
+            document.getElementById('donateframe').src = "http://www.peacecorps.gov/about/give/";}}
+		    function mobilizeDonate(div){
+            
+			console.log ("injecting css to donate page");
+			var cssLink = document.createElement("link");
+			cssLink.href="assets/css/donate.css";
+			cssLink.rel="stylesheet";
+			cssLink.type="text/css";
+			var doc = document.getElementById("donateframe").contentWindow.document;
+			console.log(cssLink);
+			doc.body.appendChild(cssLink);
+			console.log(doc);
+            } </script>
+            
+                    <header>
+                        <h1>Donate to Peace Corps</h1>
+                        <!--<a id="backbutton" href="javascript:;" class="button">Back</a>-->
+                    </header>
+                     <div class="icontainer">
+                        <iframe src="http://www.peacecorps.gov/about/give/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="donateframe" onLoad="mobilizeDonate(this)">Your browser doesn't support iFrames.</iframe>
+                    </div>
+           </div>                       
+            </div>
+            <!-- bottom navbar. Add additional tabs here -->
+            <div id="navbar">
+                <div class="horzRule"></div>
+                <a href="#info" id='navbar_info' class='icon info'>Info</a>
+                <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
+                <a href="#main" id='navbar_blog' class='icon stack pressed'>Blog</a>
+                <a href="#video" id='navbar_video' class='icon picture'>Video</a>
+                <a href="#social" id='navbar_social' class='icon chat'>Twitter</a>
+            </div>
+            <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
+            <!--<nav>
+                <div class='title'>Home</div>
+                <ul>
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>
+                </ul>
+            </nav>-->
+            
+            <!-- Start content panels -->
+            
+    <div title='Medical History' id="medhistory" class="panel" data-defer="eligibility/medhistory.html">
+    </div>
+    <div title='Legal History' id="legalhistory" class="panel" data-defer="eligibility/legalhistory.html">
+    </div>
+    <div title='Citizenship/Naturalization' id="citizen" class="panel" data-defer="eligibility/citizen.html">
+    </div>
+    <div title='Military Discharge' id="military" class="panel" data-defer="eligibility/military.html">
+    </div>
+    <div title='Financial Obligations' id="finance" class="panel" data-defer="eligibility/finance.html">
+    </div>
+    <div title='Intelligence History' id="intel" class="panel" data-defer="eligibility/intel.html">
+    </div>
+   <div title='Couples' id="couples" class="panel" data-defer="eligibility/couples.html">
+    </div>
+                    
+        </div>
+    </body>
+    
+</html>
