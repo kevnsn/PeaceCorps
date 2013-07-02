@@ -25,7 +25,8 @@
  
  //--------Hack to load faster -- 
   function onBackKeyDown() {
-   $.ui.goBack()
+	  if ($("#header").find('#backbutton').length==1)
+	  {$.ui.goBack()}  
 }
 
 var app = {
@@ -45,7 +46,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		navigator.splashscreen.hide();
+		
 		document.addEventListener("backbutton", onBackKeyDown, false);
 		
     }
