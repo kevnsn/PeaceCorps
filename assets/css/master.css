@@ -34,6 +34,9 @@ border-width:1px;
 
 .submenu{margin-top:30px !important;}
 
+.infolist {margin-left:35px !important;}
+.infolist li {margin-top:5px;}
+.note {font-size:12px !important; line-height:1em !important; margin-top:25px;}
 #navbar {
 	text-shadow:none;
 }

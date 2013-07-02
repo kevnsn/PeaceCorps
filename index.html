@@ -103,7 +103,7 @@
                     </div>
                 </div>
            <div title='Social' id="social" class="panel" data-load="updateTwitter" data-defer="twitter.html">
-<script> function updateTwitter(div){$(".twitter-timeline").attr("height",window.innerHeight-90).attr("width",window.innerWidth);
+<script> function updateTwitter(div){$(".twitter-timeline").attr("height",($(".panel").height()+30)+"px").attr("width",window.innerWidth+"px");
 		console.log ("injecting css to twitter");
 			var cssLink = document.createElement("link");
 			cssLink.href="assets/css/twitter.css";
@@ -163,7 +163,7 @@
             </nav>-->
             
             <!-- Start content panels -->
-            
+    <!-- Eligibility Panels -->       
     <div title='Medical History' id="medhistory" class="panel" data-defer="eligibility/medhistory.html">
     </div>
     <div title='Legal History' id="legalhistory" class="panel" data-defer="eligibility/legalhistory.html">
@@ -178,7 +178,46 @@
     </div>
    <div title='Couples' id="couples" class="panel" data-defer="eligibility/couples.html">
     </div>
-                    
+    
+    <!-- Application Panels -->       
+    <div title='The Application' id="appdetail" class="panel" data-defer="application/appdetail.html">
+    </div>
+    <div title='Interview' id="interview" class="panel" data-defer="application/interview.html">
+    </div>
+    <div title='Nomination' id="nomination" class="panel" data-defer="application/nomination.html">
+    </div>
+    <div title='Medical, Legal, Suitability and Competitive Reviews' id="reviews" class="panel" data-defer="application/reviews.html">
+    </div>
+    <div title='Invitation' id="invitation" class="panel" data-defer="application/invitation.html">
+    </div>
+    <div title='Final Medical Clearance' id="medclearance" class="panel" data-defer="application/medclearance.html">
+    </div>
+   <div title='Preparation for Departure' id="prepfordepart" class="panel" data-defer="application/prepfordepart.html">
+    </div>
+
+    <!-- Qual & Placement Panels -->       
+    <div title='Education' id="education" class="panel" data-defer="qualplace/education.html">
+    </div>
+    <div title='Health' id="health" class="panel" data-defer="qualplace/health.html">
+    </div>
+    <div title='Youth' id="youth" class="panel" data-defer="qualplace/youth.html">
+    </div>
+    <div title='Agriculture' id="agriculture" class="panel" data-defer="qualplace/agriculture.html">
+    </div>
+    <div title='Environment' id="environment" class="panel" data-defer="qualplace/environment.html">
+    </div>
+    <div title='Business' id="business" class="panel" data-defer="qualplace/business.html">
+    </div>
+    <!-- Benefits Panels -->       
+    <div title='Financial Benefits and Loan Deferment' id="finbenefit" class="panel" data-defer="benefit/finbenefit.html">
+    </div>
+    <div title='Medical Benefits' id="medbenefit" class="panel" data-defer="benefit/medbenefit.html">
+    </div>
+    <div title='Educational Benefits' id="edubenefit" class="panel" data-defer="benefit/edubenefit.html">
+    </div>
+    <div title='Professional and Career Benefits' id="profbenefit" class="panel" data-defer="benefit/profbenefit.html">
+    </div>
+
         </div>
     </body>
     
