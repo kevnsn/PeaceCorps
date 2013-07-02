@@ -50,7 +50,7 @@
             </div>
             <div id="content">
                 <!-- here is where you can add your panels -->
-                <div title='Blog' id="main" class="panel" selected="true" data-load="updateBlog">
+                <div title='Blog' id="main" class="panel" data-load="updateBlog">
                   <script> 
 			function updateBlog(div){ 
 			if(document.getElementById('blogframe').src!="http://passport.peacecorps.gov/"){ document.getElementById('blogframe').src = "http://passport.peacecorps.gov/";}}   
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 
-                <div title='Information' id="info" class="panel"data-defer="info.html">
+                <div title='Information' id="info" class="panel"  selected="true"  data-defer="info.html">
                 </div>
                 <div title='History' id="history" class="panel"data-defer="history.html">
                 </div>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
            <div title='Social' id="social" class="panel" data-load="updateTwitter" data-defer="twitter.html">
-<script> function updateTwitter(div){$(".twitter-timeline").attr("height",($(".panel").height()+30)+"px").attr("width",window.innerWidth+"px");
+<script> function updateTwitter(div){$("#twitter-widget-0").attr("width",window.innerWidth+"px");
 		console.log ("injecting css to twitter");
 			var cssLink = document.createElement("link");
 			cssLink.href="assets/css/twitter.css";
@@ -146,9 +146,9 @@
             <!-- bottom navbar. Add additional tabs here -->
             <div id="navbar">
                 <div class="horzRule"></div>
-                <a href="#info" id='navbar_info' class='icon info'>Info</a>
+                <a href="#info" id='navbar_info' class='icon info pressed'>Info</a>
                 <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
-                <a href="#main" id='navbar_blog' class='icon stack pressed'>Blog</a>
+                <a href="#main" id='navbar_blog' class='icon stack'>Blog</a>
                 <a href="#video" id='navbar_video' class='icon picture'>Video</a>
                 <a href="#social" id='navbar_social' class='icon chat'>Twitter</a>
             </div>

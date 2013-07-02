@@ -47,24 +47,6 @@ var app = {
     onDeviceReady: function() {
 		navigator.splashscreen.hide();
 		document.addEventListener("backbutton", onBackKeyDown, false);
-		/*	 
-		$("a").bind("click", function(e){
-			$(".panel").addClass("loading");
-			return false;
-			});*/
-        //app.change('requestbutton');
 		
     }
 };
-
-function showHide(obj, objToHide) {
-                var el = $("#" + objToHide)[0];
-
-                if (obj.className == "expanded") {
-                    obj.className = "collapsed";
-                } else {
-                    obj.className = "expanded";
-                }
-                $(el).toggle();
-
-            }

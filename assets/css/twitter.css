@@ -2,15 +2,15 @@
 /* CSS Document */
 .load-more.customisable {
 /*bottom: 255px;*/
-bottom:30px;
+/*bottom:70px;*/
 position:relative;
 display: block;
-z-index: 99999;
+bottom:50px;
 background-color: #FFF;}
 
 .timeline-footer {
 display: block;
-/*bottom: 255px;*/
-bottom:30px;
+bottom:50px;
+position:relative;
 background: #E8E8E8;
 }
