@@ -28,7 +28,7 @@
 	<!--<feature name="http://api.phonegap.com/1.0/geolocation"/>-->
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	
-	<access uri="*" subdomains="true" />
+	<access origin="*" subdomains="true" />
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
 	<preference name="phonegap-version" value="2.9.0" />
