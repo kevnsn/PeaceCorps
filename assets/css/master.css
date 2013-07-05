@@ -60,6 +60,34 @@ footer .horzRule { margin:0px auto;}
 
 .panel {padding:0px !important;}
 
+
+
+/* Career Styling */
+
+#reslist li {
+	padding: 8px 15px 8px 8px !important;
+}
+
+#reslist h3 {
+	font-size:13px;
+}
+#reslist h4 {
+	font-size:11px;
+}
+
+
+#jobtext {padding:10px;}
+#jobtext li {margin-left:25px;}
+#jobtext h1 {text-shadow:none !important;}
+#jobtext h3 {margin-top:10px;}
+
+#pagelabel {font-size:12px;}
+#prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}
+
+.ui-disabled {
+	color:#CF9F9F !important;
+}
+
 /*  Loading Bar */
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window

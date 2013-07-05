@@ -15,9 +15,12 @@
 <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 
 <!-- Import Javascript -->
-<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script> 
+<!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
+<script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
+
+
 <!-- Import jqMobi plugins -->
 
 
@@ -47,13 +50,14 @@
             <div id="header">
                 <!--<a href="javascript:$.ui.toggleSideMenu()" class="button" style="float:right">Toggle Nav</a>-->
                <!-- <a id="backbutton" href="javascript:;" class="button">Back</a>-->
-                <h1>Peace Corps Passport</h1>
+                <h1>Peace Corps</h1>
                 <!--<a id="donatebutton" href="#donate" class="button icon heart mini">Donate</a>-->
             </div>
             <div id="content">
                 <!-- here is where you can add your panels -->               
                 <div title='Information' id="information" class="panel"  selected="true"  data-defer="info.html">
                 </div>
+               <!-- Information Panels -->
                 <div title='History' id="history" class="panel"data-defer="info/history.html">
                 </div>
                 <div title='Eligibility' id="eligibility" class="panel"data-defer="info/eligibility.html">
@@ -65,9 +69,7 @@
                 <div title='Benefits' id="benefits" class="panel"data-defer="info/benefits.html">
                 </div>
                 
-                <!-- Media Panels -->
-                <div title='Media' id="media" class="panel" data-defer="media.html"></div>
-                <div title='Video' id="video" class="panel" data-load="updateVid" >
+<!--
                 <script> function updateVid(div){document.getElementById('videoframe').contentWindow.prepareYoumax();} 
             </script>
                     <header>
@@ -78,8 +80,8 @@
                         <iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%">Your browser doesn't support iFrames.</iframe>
                     </div>
                 </div>
-                
-           <!--<div title='Twitter' id="twitter" class="panel" data-load="updateTwitter" data-defer="media/twitter.html">
+             
+             <div title='Twitter' id="twitter" class="panel" data-load="updateTwitter" data-defer="media/twitter.html">
 <script> function updateTwitter(div){$("#twitter-widget-0").attr("width",window.innerWidth+"px");
 		console.log ("injecting css to twitter");
 			var cssLink = document.createElement("link");
@@ -93,7 +95,8 @@
 			} </script>
            </div>-->
                 
-                <div title='Donate' id="donate" class="panel" data-load="updateDonate" data-nav="donate_nav">
+           <div title='Donate' id="donate" class="panel" data-load="updateDonate" data-nav="donate_nav">
+           <!--
            <script>
 		    function updateDonate(div){
             if(document.getElementById('donateframe').src!="http://www.peacecorps.gov/about/give/"){
@@ -109,7 +112,7 @@
 			console.log(cssLink);
 			doc.body.appendChild(cssLink);
 			console.log(doc);
-            } </script>
+            } </script>-->
             
                     <header>
                         <h1>Donate to Peace Corps</h1>
@@ -132,9 +135,41 @@
             
             <!-- Start content panels -->
             
-    <!-- Media Panels -->       
-     <div title='Blog' id="blog" class="panel" data-defer="media/blog.html"></div>
-     <div title='Tumblr' id="tumblr" class="panel" data-defer="media/tumblr.html"></div>
+     <!-- Media Panels -->
+     <div title='Media' id="media" class="panel" data-defer="media.html"></div> 
+     <div title='Blog' id="blog" class="panel" data-defer="media/blog.html"></div> 
+     <div title='Video' id="video" class="panel" data-load="updateVid">
+       <script> function updateVid(div){document.getElementById('videoframe').contentWindow.prepareYoumax();}</script>
+        <header>
+            <h1>Peace Corps Video</h1>
+            <a id="backbutton" href="javascript:;" class="button">Back</a>
+        </header>
+        <div class="icontainer">
+            <iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%">Your browser doesn't support iFrames.</iframe>
+        </div>
+        </div>
+        <script>
+		function updateReddit(div){
+            if($("#redditframe").get(0).contentWindow.location.origin!="http://www.reddit.com"){
+            document.getElementById('redditframe').src = "http://www.reddit.com/r/peacecorps/.compact";}}
+		</script>
+     <div title='Reddit' id="reddit" class="panel" data-load="updateReddit">
+     <header>
+        <h1>Peace Corps Reddit</h1>
+    <a id="backbutton" href="javascript:;" class="button">Back</a>
+     </header>
+    <div class="icontainer">
+        <iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="redditframe">
+        Your browser doesn't support iFrames.</iframe>
+    </div>
+    </div>
+     
+     <!--RPCV Panels -->
+     <div title='RPCV' id="rpcvmenu" class="panel" data-defer="rpcv.html"></div> 
+     <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2"></div>
+    <!-- <script>function careerInit(div){/*alert("career init");*/part2();}</script>-->
+     <div title='Resources' id="rpcvresources" class="panel" data-defer="rpcv/resources.html"></div>
+     
     <!-- Eligibility Panels -->       
     <div title='Medical History' id="medhistory" class="panel" data-defer="info/eligibility/medhistory.html">
     </div>
@@ -190,14 +225,17 @@
     <div title='Professional and Career Benefits' id="profbenefit" class="panel" data-defer="info/benefit/profbenefit.html">
     </div>
     </div><!-- end content -->
-                <!-- bottom navbar. Add additional tabs here -->
-            <div id="navbar">
-                <div class="horzRule"></div>
-                <a href="#information" id='navbar_info' class='icon info pressed'>Info</a>
-                <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
-                <a href="#media" id='navbar_media' class='icon picture'>Media</a>
-                <a href="#events" id='navbar_events' class='icon stack'>Events</a>
-                <a href="#rpcv" id='navbar_rpcv' class='icon chat'>RPCV</a>
-            </div>  
+   
+   <!-- bottom navbar. Add additional tabs here -->
+    <div id="navbar">
+        <div class="horzRule"></div>
+        <a href="#information" id='navbar_info' class='icon info pressed'>Info</a>
+        <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
+        <a href="#media" id='navbar_media' class='icon picture'>Media</a>
+        <a href="#events" id='navbar_events' class='icon stack'>Events</a>
+        <a href="#rpcvmenu" id='navbar_rpcv' class='icon chat'>RPCV</a>
+    </div>  
+    </div><!--end afUI -->
+    <div class="modal"></div><!-- Loading bar -->
 </body>
 </html>

@@ -27,6 +27,7 @@
   function onBackKeyDown() {
 	  if ($("#header").find('#backbutton').length==1)
 	  {$.ui.goBack()}  
+	  
 }
 
 var app = {

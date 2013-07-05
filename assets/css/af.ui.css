@@ -903,7 +903,7 @@ body {
 }
 #afui input[type="radio"]:checked+label:before,
 #afui input[type="checkbox"]:checked+label:before {
-  background: #00AEEF;
+  background: #cd621a/*#00AEEF*/;
   color: #FFFFFF;
 }
 #afui .button {
