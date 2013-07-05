@@ -1,14 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Donate</title>
-<style>
-body{margin:0px;}
-</style>
-</head>
+<header>
+	<h1>Donate to Peace Corps</h1>
+    <!--<a id="backbutton" href="javascript:;" class="button">Back</a>-->
+     </header>
+<div class="localcontentpanel donatepanel">
+<div id="forms">
+    <form name="Donate" action="https://donate.peacecorps.gov/index.cfm?shell=donate.contribute.summary" method="post" id="genForm">
+        <fieldset class="top">
+            <h2 style="color:#CD621A;">Contribute Now</h2>
+            <div class="form-row">
+                <div class="donation">
+                    <label for="specialDonationAmt">Amount $</label>
+                    <input type="text" name="amt" id="amt" value="">
+                    <label for="amt" class="error" style="display:none;">Please enter a valid donation amount</label>
+                </div>
+            </div>
+<!--
+            <div class="form-row">
+                <p id="donorpremques" style="color:#9b9890">
+                    If you're donating $10 or more, would you like to receive the corresponding donor recognition item?
+                    <br>
+                    <label for="yes_premium">
+                        <input type="radio" name="donorprem" value="yes" id="yes_premium" disabled="">Yes</label>
+                    <label for="no_premium">
+                        <input type="radio" name="donorprem" value="no" id="no_premium" disabled="">No</label>
+                    <label for="donorprem" class="error" style="display:none;">Please indicate your donor recognition preference</label>
+                </p>
+            </div>
 
-<body>
+            <div class="form-row">
+                <div class="donation">
+                    <label for="poster" id="posterlbl" style="color:#9b9890">If you're donating $20-$99, which poster do you prefer?</label>
+                    <select name="poster" id="poster" disabled="">
+                        <option value="">Select Poster</option>
+                        <option value="For dreamers who do">1. For dreamers who do</option>
+                        <option value="There isn't an app for this">2. There isn't an app</option>
+                        <option value="The smallest change can make the biggest difference">3. The smallest change</option>
+                    </select>
+                    <label for="poster" class="error" style="display:none;">Please indicate your poster preference</label>
+                    <br>
+                    <br></div>
+            </div>
+-->
+            <div class="form-row">
+                <input type="hidden" name="Pamt" value="PCF-GEN">
+                <button type="submit" name="submitDonate" value="Donate" class="button">
+                    <span>Donate</span>
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    <br>
+    <div id="opsi-contact">
+        <h3 class="nbm topborder">Contact Us</h3>
+        <p>Peace Corps<br>
+            Office of Gifts and Grants Management<br>
+            1111 20th St. NW Washington, DC, 20526</p>
+        <h4>Phone</h4>
+        <p><span id="gc-number-0" class="gc-cs-link" title="Call with Google Voice">855.855.1961</span> ext. 2170</p>
+        <h4>E-mail Us</h4>
+        <p><a href="mailto:give@peacecorps.gov" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=give@peacecorps.gov&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">give@peacecorps.gov</a>    </p>
+    </div>
+</div>
+</div>
 
-</body>
-</html>
+

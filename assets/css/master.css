@@ -1,7 +1,3 @@
-#donatebutton {
-	float:right;
-}
-
 .localcontentpanel{
 padding:15px !important;
 min-width:100%;
@@ -98,9 +94,10 @@ footer .horzRule { margin:0px auto;}
     display:    none;
     position:   fixed;
     z-index:    1000;
-    top:        0;
+    top:        44px;
+    bottom:     49px;
     left:       0;
-    height:     100%;
+    max-height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .7 ) 
                 url('../img/loading.gif') 
@@ -119,3 +116,65 @@ body.loading {
 body.loading .modal {
     display: block;
 }
+
+/* Donation page css*/
+form fieldset {
+border:0px !important;}
+/*.form-row {text-align:center !important;}*/
+button[name="submitDonate"] {
+width:100% !important;
+height:35px!important;
+font-size:14px!important;
+}
+
+form p {
+line-height:1em !important;
+font-size:11px !important;
+}
+
+form h2 {margin-bottom:5px;}
+#donateSummaryTable {
+width: 100%;
+text-align: left;
+font-size: 12px;
+margin-bottom: 5px;
+}
+.instruction {font-size:11px !important;
+margin-bottom:5px;margin-top:0px;}
+#card_phone {width:66% !important;}
+.large {clear:both;}
+.form-row-quest {clear:both;}
+.charRemaining, .charRemaining+span {display:none !important;}
+label[for='interest_conflict']{width:85% !important;}
+.submitbutton {width:100%; height:50px; font-size:16px;margin-top:10px;}
+label[for='card_email_consent']{display:none;}
+#card_email_consent {
+display: block!important;
+border: 1px solid #cacece;
+border-radius: 3px;
+top: 8px;
+left: -25px;
+width: 3em;
+height: 3em;
+margin-bottom: 5px;
+}
+label[for='card_source']{padding-top:0px !important;}
+
+form[name='Paymentinfo'] p {display:none;}
+p + h2 {display:block!important;}
+h2 + fieldset {margin-left:20px!important;}
+.actions ul {list-style:none;}
+
+form[name='enterPlasticCardPaymentInformation'] td .label {width:33%;}
+form[name='enterPlasticCardPaymentInformation'] label {width:100%;!important}
+form[='enterPlasticCardPaymentInformation'] input {width:98%;float:right;}
+span .rf {float:left;display:inline;}
+.smallItal{font-size:10px;}
+#csh2 {display:none;}
+#cardHolderState2 {display:none;}
+#plasticCardTypeEntered img {display:none;}
+#hlp_sc_pop {display:none;}
+#expirationMonth, #expirationYear {width:30%!important;}
+input[value='Cancel']{display:none !important;}
+
+

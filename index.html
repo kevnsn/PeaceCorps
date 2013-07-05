@@ -16,10 +16,11 @@
 
 <!-- Import Javascript -->
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
+<script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
-
+<script type="text/javascript" charset="utf-8" src="assets/js/donateform.js"></script>
 
 <!-- Import jqMobi plugins -->
 
@@ -36,7 +37,6 @@
 		$.ui.ready(function () {
 			console.log("ui launch");
 			navigator.splashscreen.hide();
-			
 			//Add swipe listeners
 			
 			
@@ -95,7 +95,7 @@
 			} </script>
            </div>-->
                 
-           <div title='Donate' id="donate" class="panel" data-load="updateDonate" data-nav="donate_nav">
+           <div title='Donate' id="donate" class="panel" data-load="setupDonate" data-defer="donate.html">
            <!--
            <script>
 		    function updateDonate(div){
@@ -224,6 +224,7 @@
     </div>
     <div title='Professional and Career Benefits' id="profbenefit" class="panel" data-defer="info/benefit/profbenefit.html">
     </div>
+
     </div><!-- end content -->
    
    <!-- bottom navbar. Add additional tabs here -->
@@ -232,10 +233,12 @@
         <a href="#information" id='navbar_info' class='icon info pressed'>Info</a>
         <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
         <a href="#media" id='navbar_media' class='icon picture'>Media</a>
-        <a href="#events" id='navbar_events' class='icon stack'>Events</a>
-        <a href="#rpcvmenu" id='navbar_rpcv' class='icon chat'>RPCV</a>
+        <a href="#events" id='navbar_events' class='icon calendar'>Events</a>
+        <a href="#rpcvmenu" id='navbar_rpcv' class='icon user'>RPCV</a>
     </div>  
     </div><!--end afUI -->
+
     <div class="modal"></div><!-- Loading bar -->
+    
 </body>
 </html>
