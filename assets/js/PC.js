@@ -22,11 +22,16 @@
 // var addformlisteners;
  //var checkSubmit;
  
- 
+ function addLoad() {
+	 $('body').addClass('loading');
+ }
+  function removeLoad() {
+	 $('body').removeClass('loading');
+ }
  //--------Hack to load faster -- 
   function onBackKeyDown() {
 	  if ($("#header").find('#backbutton').length==1)
-	  {$.ui.goBack()}  
+	  {$.ui.goBack();}  
 	  
 }
 
@@ -47,7 +52,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		
 		document.addEventListener("backbutton", onBackKeyDown, false);
 		
     }

@@ -17,6 +17,7 @@
 <!-- Import Javascript -->
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="assets/js/jquery.cookie.js"></script>-->
 <script type="text/javascript" charset="utf-8" src="assets/js/jq.appframework.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
@@ -32,7 +33,8 @@
         /* This function runs when the body is loaded.*/
         var init = function () {
         	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
-			navigator.splashscreen.hide();
+			
+			//localStorage.clear();
 			console.log("init launch");
         };
         document.addEventListener("DOMContentLoaded", init, false);
@@ -56,9 +58,15 @@
                 <!--<a id="donatebutton" href="#donate" class="button icon heart mini">Donate</a>-->
             </div>
             <div id="content">
+                <script>
+				function InitInfo(div) {
+				console.log("Information initialized");	
+				navigator.splashscreen.hide();
+				}
+				</script>
                 <!-- here is where you can add your panels -->               
-                <div title='Information' id="information" class="panel"  selected="true"  data-defer="info.html">
-                </div>
+                <div title='Information' id="information" class="panel"  selected="true"  data-defer="info.html" data-load="InitInfo"></div>
+                
                <!-- Information Panels -->
                 <div title='History' id="history" class="panel"data-defer="info/history.html">
                 </div>
@@ -133,31 +141,37 @@
             
      <!-- Media Panels -->
      <div title='Media' id="media" class="panel" data-defer="media.html"></div> 
-     <div title='Blog' id="blog" class="panel" data-defer="media/blog.html"></div> 
+     <div title='Blog' id="blog" class="panel" data-defer="media/blog.html" data-load="updateBlog"></div> 
+            <script>
+			function updateBlog(div){
+		   //alert("loading video");
+		   $('body').addClass('loading');
+		   $('#blogframecontainer').empty();
+		   $('#blogframecontainer').append('<iframe src="http://passport.peacecorps.gov/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="blogframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
      <div title='Video' id="video" class="panel" data-load="updateVid">
-       <script> function updateVid(div){document.getElementById('videoframe').contentWindow.prepareYoumax();}</script>
+       <script> function updateVid(div){
+		   //alert("loading video");
+		   $('body').addClass('loading');
+		   $('#videoframecontainer').empty();
+		   $('#videoframecontainer').append('<iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   //$('body').removeClass('loading');
+		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
         <header>
             <h1>Peace Corps Video</h1>
             <a id="backbutton" href="javascript:;" class="button">Back</a>
         </header>
-        <div class="icontainer">
-            <iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%">Your browser doesn't support iFrames.</iframe>
+        <div id="videoframecontainer">
         </div>
         </div>
         <script>
 		function updateReddit(div){
-            if($("#redditframe").get(0).contentWindow.location.origin!="http://www.reddit.com"){
-            document.getElementById('redditframe').src = "http://www.reddit.com/r/peacecorps/.compact";}}
+			$('body').addClass('loading');
+		   $('#redditframecontainer').empty();
+		   $('#redditframecontainer').append('<iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="redditframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+			}
 		</script>
-     <div title='Reddit' id="reddit" class="panel" data-load="updateReddit">
-     <header>
-        <h1>Peace Corps Reddit</h1>
-    <a id="backbutton" href="javascript:;" class="button">Back</a>
-     </header>
-    <div class="icontainer">
-        <iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="redditframe">
-        Your browser doesn't support iFrames.</iframe>
-    </div>
+     <div title='Reddit' id="reddit" class="panel" data-load="updateReddit" data-defer="media/reddit.html">
     </div>
      
      <!--RPCV Panels -->

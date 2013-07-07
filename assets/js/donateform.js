@@ -8,7 +8,7 @@ var cookietemp;
 var submitForm5 = function () {
 	$.ajax({
     url: "https://pay.gov"+$('form[name="authorizePaymentForm"]').attr('action'),
-    type: 'POST', headers:{"Cookie":cookietemp},
+    type: 'POST', headers:{"Cookie":localStorage["cookietemp"]},
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="authorizePaymentForm"]').serialize()+"&formAction=Submit+Payment",
     success: function(res) {
@@ -21,7 +21,7 @@ var submitForm5 = function () {
 	alert("form replaced, submitting second ajax");
 	$.ajax({
     url: "https://pay.gov"+$('form[name="authorizePaymentForm"]').attr('action'),
-    type: 'POST', headers:{"Cookie":cookietemp},
+    type: 'POST', headers:{"Cookie":localStorage["cookietemp"]},
     data:$('form[name="authorizePaymentForm"]').serialize(),
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     success: function(res) {
@@ -30,6 +30,7 @@ var submitForm5 = function () {
 	var tempdata=$('form[action="https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm"]').serialize();
 	console.log("submitted to peacecorps sucess page");
 	console.log(tempdata);
+	//START FINAL AJAX
 	$.ajax({
     url: "https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm",
     type: 'POST', headers:{"Cookie":cookietemp},
@@ -41,7 +42,6 @@ var submitForm5 = function () {
 	$($("#main").find('p')[2]).hide()
 	$("#main").append("<a class='button' href='#donate'>Back to Donate</a>")
 		}});// end peace corps final ajax
-	
 	
 	
 	}});// end final submission ajax
@@ -62,12 +62,14 @@ var submitForm4 = function (){
 console.log ("submitting 3rd ajax");
 $.ajax({
     url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action'),
-    type: 'POST', headers:{"Cookie":cookietemp},
+    type: 'POST', headers:{"Cookie":localStorage["cookietemp"],"Origin":"https://www.pay.gov"},
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="enterPlasticCardPaymentInformation"]').serialize()+"&formAction=Continue+with+Plastic+Card+Payment",
-    success: function(res) {
+    success: function(res,textstat,jqXHR) {
     alert("ajax to pay.gov payment succcesful");
 	console.log(res);
+	//alert(jqXHR.getResponseHeader("Set-Cookie"));
+	//alert(jqXHR.getResponseHeader("Location"));
 	if($(res).find('#main p')[1]==undefined)
 	{
 		$("body").removeClass("loading");
@@ -82,8 +84,8 @@ $.ajax({
 		if($("#customerEmail").val()==$("#confirmEmailAddress").val())
 		{
 		$("body").addClass("loading");
-		submitForm5();
 		event.preventDefault();
+		submitForm5();
 		}
 		else {
 			alert("The email addresses you have provided do not match.");
@@ -121,23 +123,33 @@ $.ajax({
 var submitForm3 = function (){
 console.log ("submitting 3rd ajax");
 $.ajax({
-    url: url3,
+    url: url3,cache:"false",
     type: 'POST',
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="Paymentinfo"]').serialize(),
-    success: function(res, textStatus, XMLHttpRequest) {
+    success: function(res, textStatus,  jqXHR) {
     alert("ajax to pay.gov succcesful");
 	//console.log(res);
-	/*cookietemp=XMLHttpRequest.getResponseHeader('Set-Cookie');*/
-	//alert("cookie gathered");
+	 //cookietemp=jqXHR.getResponseHeader('Set-Cookie');
+	//console.log(cookietemp);
+	alert("cookie gathered");
+	console.log(res);
 	var t = $(res).find('.hidden_link').attr('href');
-	cookietemp=t.substring(0,t.indexOf('?'));
+	console.log(t);
+	var temp = t.substring(1,t.indexOf('?'));
+	console.log(temp);
+	alert(temp);
+	if(temp.substring(0,11)=="jsessionid=")
+	{localStorage.setItem("cookietemp", temp);}
+	alert(jqXHR.getResponseHeader("Set-Cookie"));
+	alert(jqXHR.getResponseHeader("Location"));
+	//console.log("cookie set as"+t.substring(0,t.indexOf('?')));
 	$("#donatepanel2").html($(res).find('form[name="enterPlasticCardPaymentInformation"]'));
 	$('form[name="enterPlasticCardPaymentInformation"]').prepend("<h2>Enter Payment Info</h2>"); // add Informational Header
     $('input[name="formAction"]').addClass("button submitbutton");
     $("body").removeClass("loading");
 	$('input[name="formAction"]').click(function(event){
-	if ($("#cardHolderName").val().length!=0&&$("#cardHolderAddress").val().length!=0&&$("#plasticCardNumber").val().length!=0&&$("#cardSecurityCode").val().length!=0){
+	if ($("#cardHolderName").val().length!=0&&$("#cardHolderAddress").val().length!=0&&$("#plasticCardNumber").val().length!=0&&$("#cardSecurityCode").val().length!=0&&$("#expirationYear").val()!=""&&$("#expirationMonth").val()!=""){
 		alert("good form");
 		$("body").addClass("loading");
 		submitForm4(); //removes loading mask when done
