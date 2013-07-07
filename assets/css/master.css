@@ -196,3 +196,5 @@ text-shadow: none;
 label[for='authorizeTransaction']{
 width: 88%!important;
 margin-bottom: 10px;}
+
+#donatepanel2 h1 {text-shadow:none;}

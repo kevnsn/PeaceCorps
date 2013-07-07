@@ -32,12 +32,13 @@
         /* This function runs when the body is loaded.*/
         var init = function () {
         	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
+			navigator.splashscreen.hide();
 			console.log("init launch");
         };
         document.addEventListener("DOMContentLoaded", init, false);
 		$.ui.ready(function () {
 			console.log("ui launch");
-			navigator.splashscreen.hide();
+			//navigator.splashscreen.hide();
 			//Add swipe listeners
 			
 			

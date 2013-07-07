@@ -1,0 +1,510 @@
+<header>
+	<h1>Donate - Enter Info</h1>
+    <!--<a id="backbutton" href="#donate" class="button" onclick="$.ui.loadContent("donate",false,false,"fade");">Back</a>-->
+     </header>
+     <div id="donatepanel2" style="display:none;"></div>
+<div id="localcontent2">
+<form name="Paymentinfo" id="donationForm">	
+		<p>Please review the following summary of your contribution. If the contribution summary is correct, fill out your information below and submit to proceed to payment.</p>
+        <div id="ajaxcontent">
+        </div>
+            <div id="forms" class="tab_container">	
+			<div style="float:right;"><span class="instruction">Note: fields with an asterisk (*) are required.</span></div>
+			 
+             <h2>Your Information</h2> 
+			 
+			 <fieldset>
+			
+			 	 <div class="form-row-quest" id="donorTypeLine" style="">
+                    	<label for="donor_type">Type of Donor</label>
+                        <input type="radio" name="donor_type" id="donor_type_individual" value="Individual" onchange="showHide(this,'contact_person');return false;" onpropertychange="showHide(this,'contact_person');return false;" checked="checked">
+                        <label for="donor_type_individual">Individual</label>
+                        <input type="radio" name="donor_type" id="donor_type_organization" value="Organization" onchange="showHide(this,'contact_person');return false;" onpropertychange="showHide(this,'contact_person');return false;">
+                        <label for="donor_type_organization">Organization</label>
+                 </div>
+
+                 <div class="form-row">
+         			
+	                 <div class="large">
+						<label for="card_name" id="lblName">* Name</label>
+						<input type="text" name="card_name" id="card_name" maxlength="40">
+					</div>
+                    <div class="large" id="contact_person" style="display: none;">
+						<label for="card_organization" id="lblContactPerson">Contact Person</label>
+						<input type="text" name="card_organization" id="card_organization" maxlength="255" disabled=""><br>
+					</div>
+				</div>                    
+                <div class="form-row-quest"> 
+                        <span class="instruction" id="taxNote">(Note: The individual named here is the only person eligible for a tax receipt. </span>
+                    	<span class="instruction" id="contactNote"> If the donor is an organization, please provide the name of a contact person.</span>                 </div>
+				<div class="form-row">
+						<div class="large">
+                        	<label for="card_address">* Street address</label>
+							<input type="text" name="card_address" id="card_address" maxlength="80">
+                        </div>
+				
+					<div class="large">
+						<label for="card_city">* City</label>
+						<input type="text" name="card_city" id="card_city" maxlength="40">
+                    </div>
+                </div>
+	
+          		<div class="form-row">								
+					<div class="medium">
+						<label for="card_state" id="stateLabel">* State</label>
+
+								<select name="card_state" id="card_state"> 
+								 <option selected="selected" value=""></option> 
+                               	 
+                                 		<option value="AL">Alabama</option>                                 
+                                 
+                                 		<option value="AK">Alaska</option>                                 
+                                 
+                                 		<option value="AS">American Samoa</option>                                 
+                                 
+                                 		<option value="AZ">Arizona</option>                                 
+                                 
+                                 		<option value="AR">Arkansas</option>                                 
+                                 
+                                 		<option value="AA">Armed Forces (AA)</option>                                 
+                                 
+                                 		<option value="AE">Armed Forces (AE)</option>                                 
+                                 
+                                 		<option value="AP">Armed Forces (AP)</option>                                 
+                                 
+                                 		<option value="CA">California</option>                                 
+                                 
+                                 		<option value="CO">Colorado</option>                                 
+                                 
+                                 		<option value="CT">Connecticut</option>                                 
+                                 
+                                 		<option value="DE">Delaware</option>                                 
+                                 
+                                 		<option value="DC">District of Columbia</option>                                 
+                                 
+                                 		<option value="FM">Federated States of Micronesia</option>                                 
+                                 
+                                 		<option value="FL">Florida</option>                                 
+                                 
+                                 		<option value="GA">Georgia</option>                                 
+                                 
+                                 		<option value="GU">Guam</option>                                 
+                                 
+                                 		<option value="HI">Hawaii</option>                                 
+                                 
+                                 		<option value="ID">Idaho</option>                                 
+                                 
+                                 		<option value="IL">Illinois</option>                                 
+                                 
+                                 		<option value="IN">Indiana</option>                                 
+                                 
+                                 		<option value="IA">Iowa</option>                                 
+                                 
+                                 		<option value="KS">Kansas</option>                                 
+                                 
+                                 		<option value="KY">Kentucky</option>                                 
+                                 
+                                 		<option value="LA">Louisiana</option>                                 
+                                 
+                                 		<option value="ME">Maine</option>                                 
+                                 
+                                 		<option value="MH">Marshall Islands</option>                                 
+                                 
+                                 		<option value="MD">Maryland</option>                                 
+                                 
+                                 		<option value="MA">Massachusetts</option>                                 
+                                 
+                                 		<option value="MI">Michigan</option>                                 
+                                 
+                                 		<option value="MN">Minnesota</option>                                 
+                                 
+                                 		<option value="MS">Mississippi</option>                                 
+                                 
+                                 		<option value="MO">Missouri</option>                                 
+                                 
+                                 		<option value="MT">Montana</option>                                 
+                                 
+                                 		<option value="NE">Nebraska</option>                                 
+                                 
+                                 		<option value="NV">Nevada</option>                                 
+                                 
+                                 		<option value="NH">New Hampshire</option>                                 
+                                 
+                                 		<option value="NJ">New Jersey</option>                                 
+                                 
+                                 		<option value="NM">New Mexico</option>                                 
+                                 
+                                 		<option value="NY">New York</option>                                 
+                                 
+                                 		<option value="NC">North Carolina</option>                                 
+                                 
+                                 		<option value="ND">North Dakota</option>                                 
+                                 
+                                 		<option value="MP">Northern Mariana Islands</option>                                 
+                                 
+                                 		<option value="OH">Ohio</option>                                 
+                                 
+                                 		<option value="OK">Oklahoma</option>                                 
+                                 
+                                 		<option value="OR">Oregon</option>                                 
+                                 
+                                 		<option value="PW">Palau</option>                                 
+                                 
+                                 		<option value="PA">Pennsylvania</option>                                 
+                                 
+                                 		<option value="PR">Puerto Rico</option>                                 
+                                 
+                                 		<option value="RI">Rhode Island</option>                                 
+                                 
+                                 		<option value="SC">South Carolina</option>                                 
+                                 
+                                 		<option value="SD">South Dakota</option>                                 
+                                 
+                                 		<option value="TN">Tennessee</option>                                 
+                                 
+                                 		<option value="TX">Texas</option>                                 
+                                 
+                                 		<option value="TT">Trust Territories</option>                                 
+                                 
+                                 		<option value="UT">Utah</option>                                 
+                                 
+                                 		<option value="VT">Vermont</option>                                 
+                                 
+                                 		<option value="VI">Virgin Islands</option>                                 
+                                 
+                                 		<option value="VA">Virginia</option>                                 
+                                 
+                                 		<option value="WA">Washington</option>                                 
+                                 
+                                 		<option value="WV">West Virginia</option>                                 
+                                 
+                                 		<option value="WI">Wisconsin</option>                                 
+                                 
+                                 		<option value="WY">Wyoming</option>                                 
+                                 
+							   </select>
+					</div>
+				
+                    <div class="tiny">
+						<label for="card_zip" id="zipLabel">* Zip Code</label>
+						<input type="text" name="card_zip" id="card_zip">
+					</div>
+					<div class="large">
+						<label for="card_country">* Country</label>
+							<select name="card_country" id="card_country" onchange="setRequired()">
+									<option value="USA" selected="selected">United States</option>
+                                    <option value="AFG">Afghanistan</option>
+                                    <option value="ALB">Albania</option>
+                                    <option value="ALG">Algeria</option>
+                                    <option value="AND">Andorra</option>
+                                    <option value="ANG">Angola</option>
+                                    <option value="ANT">Antigua and Barbuda</option>
+                                    <option value="ARG">Argentina</option>
+                                    <option value="ARM">Armenia</option>
+                                    <option value="AUS">Australia</option>
+                                    <option value="AUT">Austria</option>
+                                    <option value="AZE">Azerbaijan</option>
+                                    <option value="BAH">Bahamas</option>
+                                    <option value="BAI">Bahrain</option>
+                                    <option value="BAN">Bangladesh</option>
+                                    <option value="BAR">Barbados</option>
+                                    <option value="BES">Belarus</option>
+                                    <option value="BEL">Belgium</option>
+                                    <option value="BEM">Belize</option>
+                                    <option value="BEN">Benin</option>
+                                    <option value="BHU">Bhutan</option>
+                                    <option value="BOL">Bolivia</option>
+                                    <option value="BOS">Bosnia and Herzegovina</option>
+                                    <option value="BOT">Botswana</option>
+                                    <option value="BRA">Brazil</option>
+                                    <option value="BRU">Brunei</option>
+                                    <option value="BUL">Bulgaria</option>
+                                    <option value="BUK">Burkina Faso</option>
+                                    <option value="BUR">Burma</option>
+                                    <option value="BUU">Burundi</option>
+                                    <option value="CAN">Canada</option>
+                                    <option value="CAB">Cambodia</option>
+                                    <option value="CAM">Cameroon</option>
+                                    <option value="CAP">Cape Verde</option>
+                                    <option value="CAE">Central African Republic</option>
+                                    <option value="CHA">Chad</option>
+                                    <option value="CHL">Chile</option>
+                                    <option value="CHN">China</option>
+                                    <option value="COL">Colombia</option>
+                                    <option value="COM">Comoros</option>
+                                    <option value="RCB">Congo Brazzaville</option>
+                                    <option value="CON">Congo Kinshasa</option>
+                                    <option value="COS">Costa Rica</option>
+                                    <option value="IVO">Cote D' Ivoire</option>
+                                    <option value="CRO">Croatia</option>
+                                    <option value="CYP">Cyprus</option>
+                                    <option value="CZE">Czech Republic</option>
+                                    <option value="DEN">Denmark</option>
+                                    <option value="DJI">Djibouti</option>
+                                    <option value="DON">Dominica</option>
+                                    <option value="DOM">Dominican Republic</option>
+                                    <option value="ETM">East Timor</option>
+                                    <option value="ECU">Ecuador</option>
+                                    <option value="EGY">Egypt</option>
+                                    <option value="ELS">El Salvador</option>
+                                    <option value="EQU">Equatorial Guinea</option>
+                                    <option value="ERI">Eritrea</option>
+                                    <option value="EST">Estonia</option>
+                                    <option value="ETH">Ethiopia</option>
+                                    <option value="FIJ">Fiji</option>
+                                    <option value="FIN">Finland</option>
+                                    <option value="FRA">France</option>
+                                    <option value="GAB">Gabon</option>
+                                    <option value="GAM">Gambia</option>
+                                    <option value="GEO">Georgia</option>
+                                    <option value="GER">Germany</option>
+                                    <option value="GHA">Ghana</option>
+                                    <option value="GRE">Greece</option>
+                                    <option value="GRN">Grenada</option>
+                                    <option value="GUA">Guatemala</option>
+                                    <option value="GUI">Guinea</option>
+                                    <option value="GUU">Guinea-Bissau</option>
+                                    <option value="GUY">Guyana</option>
+                                    <option value="HAI">Haiti</option>
+                                    <option value="VAT">Holy See</option>
+                                    <option value="HND">Honduras</option>
+                                    <option value="HUN">Hungary</option>
+                                    <option value="ICE">Iceland</option>
+                                    <option value="IND">India</option>
+                                    <option value="INS">Indonesia</option>
+                                    <option value="IRC">Iraq</option>
+                                    <option value="IRE">Ireland</option>
+                                    <option value="ISR">Israel</option>
+                                    <option value="ITA">Italy</option>
+                                    <option value="JAM">Jamaica</option>
+                                    <option value="JPN">Japan</option>
+                                    <option value="JOR">Jordan</option>
+                                    <option value="KAZ">Kazakhstan</option>
+                                    <option value="KEN">Kenya</option>
+                                    <option value="KIR">Kiribati</option>
+                                    <option value="KUW">Kuwait</option>
+                                    <option value="KYR">Kyrgyzstan</option>
+                                    <option value="LAS">Laos</option>
+                                    <option value="LAT">Latvia</option>
+                                    <option value="LEB">Lebanon</option>
+                                    <option value="LES">Lesotho</option>
+                                    <option value="LIB">Liberia</option>
+                                    <option value="LIY">Libya</option>
+                                    <option value="LIE">Liechtenstein</option>
+                                    <option value="LIT">Lithuania</option>
+                                    <option value="LUX">Luxembourg</option>
+                                    <option value="MAE">Macedonia</option>
+                                    <option value="MDG">Madagascar</option>
+                                    <option value="MAI">Malawi</option>
+                                    <option value="MAL">Malaysia</option>
+                                    <option value="MAM">Maldives</option>
+                                    <option value="MAN">Mali</option>
+                                    <option value="MAT">Malta</option>
+                                    <option value="MHL">Marshall Islands</option>
+                                    <option value="MAU">Mauritania</option>
+                                    <option value="MAV">Mauritius</option>
+                                    <option value="MEX">Mexico</option>
+                                    <option value="FSM">Micronesia</option>
+                                    <option value="MOL">Moldova</option>
+                                    <option value="MOC">Monaco</option>
+                                    <option value="MNE">Montenegro</option>
+                                    <option value="MON">Mongolia</option>
+                                    <option value="MOR">Morocco</option>
+                                    <option value="MOZ">Mozambique</option>
+                                    <option value="NAM">Namibia</option>
+                                    <option value="NAU">Nauru</option>
+                                    <option value="NEP">Nepal</option>
+                                    <option value="NEA">Netherlands Antilles</option>
+                                    <option value="NET">Netherlands</option>
+                                    <option value="NEW">New Zealand</option>
+                                    <option value="NIC">Nicaragua</option>
+                                    <option value="NIE">Niger</option>
+                                    <option value="NIG">Nigeria</option>
+                                    <option value="NKO">North Korea</option>
+                                    <option value="NOR">Norway</option>
+                                    <option value="OMA">Oman</option>
+                                    <option value="PAK">Pakistan</option>
+                                    <option value="PLW">Palau</option>
+                                    <option value="PAN">Panama</option>
+                                    <option value="PAP">Papua New Guinea</option>
+                                    <option value="PAR">Paraguay</option>
+                                    <option value="PER">Peru</option>
+                                    <option value="PHI">Philippines</option>
+                                    <option value="POL">Poland</option>
+                                    <option value="POR">Portugal</option>
+                                    <option value="QAT">Qatar</option>
+                                    <option value="ROM">Romania</option>
+                                    <option value="RUS">Russia</option>
+                                    <option value="RWA">Rwanda</option>
+                                    <option value="SKA">Saint Kitts and Nevis</option>
+                                    <option value="SLU">Saint Lucia</option>
+                                    <option value="STV">Saint Vincent and the Grenadines</option>
+                                    <option value="WSM">Samoa</option>
+                                    <option value="SMA">San Marino</option>
+                                    <option value="SAO">Sao Tome Principe</option>
+                                    <option value="SAU">Saudi Arabia</option>
+                                    <option value="SEN">Senegal</option>
+                                    <option value="SER">Serbia</option>
+                                    <option value="SEY">Seychelles</option>
+                                    <option value="SIE">Sierra Leone</option>
+                                    <option value="SIN">Singapore</option>
+                                    <option value="SLA">Slovakia</option>
+                                    <option value="SLO">Slovenia</option>
+                                    <option value="SOL">Solomon Islands</option>
+                                    <option value="SOM">Somalia</option>
+                                    <option value="SOR">South Africa</option>
+                                    <option value="SKO">South Korea</option>
+                                    <option value="SPA">Spain</option>
+                                    <option value="SRI">Sri Lanka</option>
+                                    <option value="SUR">Suriname</option>
+                                    <option value="SWA">Swaziland</option>
+                                    <option value="SWE">Sweden</option>
+                                    <option value="SWI">Switzerland</option>
+                                    <option value="SYR">Syria</option>
+                                    <option value="TAJ">Tajikistan</option>
+                                    <option value="TAN">Tanzania</option>
+                                    <option value="THA">Thailand</option>
+                                    <option value="TOG">Togo</option>
+                                    <option value="TON">Tonga</option>
+                                    <option value="TRI">Trinidad and Tobago</option>
+                                    <option value="TUN">Tunisia</option>
+                                    <option value="TUR">Turkey</option>
+                                    <option value="TUM">Turkmenistan</option>
+                                    <option value="TUV">Tuvalo</option>
+                                    <option value="UGA">Uganda</option>
+                                    <option value="UKR">Ukraine</option>
+                                    <option value="UAE">United Arab Emirates</option>
+                                    <option value="GBR">United Kingdom</option>
+                                    <option value="URN">Uruguay</option>
+                                    <option value="UZB">Uzbekistan</option>
+                                    <option value="VAN">Vanuatu</option>
+                                    <option value="VEN">Venezuela</option>
+                                    <option value="VIE">Vietnam</option>
+                                    <option value="YEM">Yemen</option>
+                                    <option value="ZAM">Zambia</option>
+                                    <option value="ZIM">Zimbabwe</option>
+							</select>
+						</div>
+                   	</div>
+					<div class="form-row">
+						<div class="large">
+                    		<label for="card_phone">Phone</label> <span class="instruction">(i.e. 2026922170)</span>
+						 	<input type="text" name="card_phone" id="card_phone" maxlength="15">
+                       	</div>
+						<div class="large">
+                        	<label for="card_email">Email</label>
+							<input type="text" name="card_email" id="card_email" maxlength="100">
+                        </div>
+					</div>
+                  	<div class="form-row-quest">
+                      <input name="card_email_consent" id="card_email_consent" type="checkbox" value="yes" checked="checked"> <label for="card_email_consent">Yes, I would like to stay informed of exciting Volunteer stories from the field and upcoming opportunities to partner with the Peace Corps. Peace Corps will not share your information with outside organizations.</label></input>
+                                                </div>
+					<div class="form-row-quest">
+                    						<br>
+                            <label for="payment_type">* Payment Type</label><br>
+                            <input type="radio" name="payment_type" id="payment_type_cc" value="CreditCard" checked="checked">
+                            <label for="payment_type_cc">Credit Card</label> 
+                            <input type="radio" name="payment_type" id="payment_type_ach" value="DirectDebit"> 
+                            <label for="payment_type_ach">ACH Bank Check</label>
+					</div>
+                    <div class="form-row-quest">
+							<br>
+                        	<label for="card_source">Comments</label><span class="instruction"> (Special instructions regarding your donation or comments for the Volunteer.)</span><br>
+                        	<textarea name="card_source" id="card_source" rows="4" onkeydown="textCounter(document.Paymentinfo.card_source,document.Paymentinfo.commRemainingChars,150)" onkeyup="textCounter(document.Paymentinfo.card_source,document.Paymentinfo.commRemainingChars,150)">Donation processed through the Peace Corps mobile application.</textarea>
+                            	<br><div class="tiny charRemaining">
+								<input readonly="" type="text" name="commRemainingChars" size="3" maxlength="3" value="150">
+							</div><span>characters remaining</span>					</div>  
+                   
+					<div class="form-row-quest" id="dedicationCheck" style=""><a name="dedicationDetails"></a>
+                        <br><input type="checkbox" name="dedication" id="dedication" onchange="showHide(this,'dedicationEntry');" onpropertychange="showHide(this,'dedicationEntry');"><label for="dedication">I wish to donate in honor or in memory of someone. <span class="instruction">(Check this box to enter dedication details)</span></label>
+                	</input></div>   
+			</fieldset>				
+                <div id="dedicationEntry" style="display: none;">
+                <h2>Dedication Details</h2>     
+                    <div class="form-row">
+						<p id="dedicationInstruction">If you wish to donate in honor or in memory of someone, please fill out the dedication details below.</p>
+                 		<div class="large">
+							<label for="dedication_name">Name</label>
+                       	 	<input type="text" name="dedication_name" id="dedication_name" maxlength="55">
+                    	</div>
+                        <div class="large">
+							<br>
+                            <input type="radio" name="dedication_type" id="dedication_type_honor" value="Honor" onchange="showInMemory();" onpropertychange="showInMemory();">
+                            <label for="dedication_type_honor">In Honor</label>
+                            <input type="radio" name="dedication_type" id="dedication_type_memory" value="Memory" onchange="showInMemory();" onpropertychange="showInMemory();">
+                            <label for="dedication_type_memory">In Memory</label>
+                        </div>
+                    </div>
+                    <div class="form-row-quest">
+						<br>Send <span id="sendLetter">the family</span><span id="sendLetterNoJS" style="display: none;">or family</span> a letter so they know you were thinking of them:					</div>
+                    
+                    <div class="form-row">
+                        <div class="large" id="dedicationContact">
+    	                    	<label for="dedication_contact">Family Contact <span class="instruction" id="dedication_contact_instr" style="display: none;">(if donating in memory)</span></label>
+        	                   <input type="text" name="dedication_contact" id="dedication_contact" maxlength="55">
+                        </div>
+                        <div class="large">
+                        	<label for="dedication_email">Email</label>
+                            <input type="text" name="dedication_email" id="dedication_email" maxlength="100">
+                         </div>
+                    </div>
+                    
+             		<div class="form-row-quest">
+                         <div class="full">
+							<label for="dedication_address">Mailing Address</label>
+                            <input type="text" name="dedication_address" id="dedication_address" maxlength="255">
+                         </div>
+                    </div>
+                    
+                    <div class="form-row-quest">
+                        <label for="card_dedication">Message</label> <br>
+                        <textarea name="card_dedication" id="dedication_message" rows="4" onkeydown="textCounter(document.Paymentinfo.dedication_message,document.Paymentinfo.msgRemainingChars,150)" onkeyup="textCounter(document.Paymentinfo.dedication_message,document.Paymentinfo.msgRemainingChars,150)"></textarea>
+	                </div>
+                    <div class="form-row">
+                    	<div class="tiny charRemaining"> 
+                        	<input readonly="" type="text" name="msgRemainingChars" size="3" maxlength="3" value="150"> 
+                        </div><span>characters remaining</span>                    </div>
+                    <div class="form-row-quest">
+                    	<label for="dedication_consent">Information Consent</label><br>
+                        <input name="dedication_consent" id="dedication_consent_authorization_yes" type="radio" value="yes"> <label for="dedication_consent_authorization_yes">I authorize the Peace Corps to make my name and contact information available to <span id="authConsentYes">the family</span>.</label><br>
+                        <input name="dedication_consent" id="dedication_consent_authorization_no" type="radio" value="no"> <label for="dedication_consent_authorization_no"> I do <b>not</b> authorize the Peace Corps to make my name and contact information available to <span id="authConsentNo">the family</span>.</label>							
+					</div>
+           </fieldset>
+           </div>
+           
+            <fieldset>
+                <div class="form-row-quest">   
+			
+                    	<p>This information will be used to process your  contribution and to generate a confirmation letter. No information will be shared with any third parties.</p>
+                        <input name="interest_conflict" id="interest_conflict" type="checkbox" value="yes"> <label for="interest_conflict"><span>If you, your business, your employer, or an immediate family member is currently doing business, or seeking to do business with Peace Corps, or otherwise have business or financial interests that may be affected by Peace Corps please check the box above and contact the Peace Corps Partnership Program at <span id="gc-number-0" class="gc-cs-link" title="Call with Google Voice">202.692.2170</span> or </span><a href="mailto:donate@peacecorps.gov" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;tf=1&amp;to=donate@peacecorps.gov&amp;cc=&amp;bcc=&amp;su=&amp;body=','_blank');return false;">donate@peacecorps.gov</a>. Note: Serving as a Peace Corps Volunteer is not a business or financial interest.</label>
+                    
+				</div>
+			</fieldset>
+           <h2>Authorization</h2>
+           <fieldset>     
+                <div class="form-row-quest">
+					* Information Consent<br>
+
+                    
+                        <input name="information_consent" id="vol_contact_authorization_yes" type="radio" value="yes" checked="checked"> <label for="vol_contact_authorization_yes"> I authorize the Peace Corps to contact me about Peace Corps events and activities.</label><br><br>
+                        <input name="information_consent" id="vol_contact_authorization_no" type="radio" value="no"> <label for="vol_contact_authorization_no"> I <strong>do not</strong> authorize the Peace Corps to contact me about Peace Corps events and activities.</label>									
+                    
+				</div>
+            </fieldset>
+           
+
+			<fieldset class="actions">                 
+						<button type="submit" name="submit" value="Confirm Information"><span>Confirm Information</span></button>
+			</fieldset>
+		</div>
+
+            
+       
+		 
+		</form>
+
+
+
+</div>
+
+
