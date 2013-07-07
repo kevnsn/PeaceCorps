@@ -159,7 +159,8 @@ updateSearch = function(urlstring,pagenumber) {
 	//$("body").addClass("loading");
 	$.ajax({
     url: urlstring+"&page="+pagenumber,
-    type: 'GET',
+    type: 'GET',	
+	error: function(){alert("There was an error connecting to the database.  Please check your connection and try again.");},
     success: function(res) {
 		
 		$("body").removeClass("loading");
@@ -252,6 +253,7 @@ changePage = function(joburl) {
 	$.ajax({
     url: joburl,
     type: 'GET',
+	error: function(){alert("There was an error connecting to the database.  Please check your connection and try again.");},
     success: function(res) {
 		//console.log("Ajax success");
 		//console.log(res);
@@ -274,7 +276,7 @@ part2=function(){
 		$("#statediv").hide();	
 		addForm(); // Add listeners and functionality
 		//Start a search
-		updateSearch("http://www.peacecorps.gov/resources/returned/careerlink/jobs/?location_macro=&classification=&keyword_search=",1);
+		//updateSearch("http://www.peacecorps.gov/resources/returned/careerlink/jobs/?location_macro=&classification=&keyword_search=",1);
 		searchstring="http://www.peacecorps.gov/resources/returned/careerlink/jobs/?location_macro=&classification=&keyword_search=";
 		$('#nextbutton').addClass('ui-disabled');
 		  $('#nextbutton').attr("disabled","true");

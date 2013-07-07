@@ -139,10 +139,14 @@ $.ajax({
 	var temp = t.substring(1,t.indexOf('?'));
 	console.log(temp);
 	alert(temp);
+	alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 	if(temp.substring(0,11)=="jsessionid=")
 	{localStorage.setItem("cookietemp", temp);}
-	alert(jqXHR.getResponseHeader("Set-Cookie"));
-	alert(jqXHR.getResponseHeader("Location"));
+	else if (jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
+	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie"));
+	}
+	
+	//alert(jqXHR.getResponseHeader("Location"));
 	//console.log("cookie set as"+t.substring(0,t.indexOf('?')));
 	$("#donatepanel2").html($(res).find('form[name="enterPlasticCardPaymentInformation"]'));
 	$('form[name="enterPlasticCardPaymentInformation"]').prepend("<h2>Enter Payment Info</h2>"); // add Informational Header

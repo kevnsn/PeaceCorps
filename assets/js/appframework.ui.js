@@ -341,7 +341,6 @@
             if (!cache[id]) {
                 if (!opts) opts = {};
                 if (!$.feat.nativeTouchScroll) opts.useJsScroll = true;
-
                 tmp = scroller(this[i], opts);
                 cache[id] = tmp;
             } else {
@@ -3257,7 +3256,7 @@
 
 
     ui.prototype = {
-        transitionTime: "230ms",
+        transitionTime: "100ms",
         showLoading: true,
         loadContentQueue: [],
         isIntel: false,
@@ -3281,7 +3280,7 @@
         passwordBox: $.passwordBox ? new $.passwordBox() : false,
         selectBox: $.selectBox ? $.selectBox : false,
         ajaxUrl: "",
-        transitionType: "slide",
+        transitionType: "fade",
         scrollingDivs: [],
         firstDiv: "",
         hasLaunched: false,

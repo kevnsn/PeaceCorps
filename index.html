@@ -19,7 +19,7 @@
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script>
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/jquery.cookie.js"></script>-->
 <script type="text/javascript" charset="utf-8" src="assets/js/jq.appframework.js"></script>
-<script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/donateform.js"></script>
@@ -53,7 +53,7 @@
             <!-- this is the header div at the top -->
             <div id="header">
                 <!--<a href="javascript:$.ui.toggleSideMenu()" class="button" style="float:right">Toggle Nav</a>-->
-               <!-- <a id="backbutton" href="javascript:;" class="button">Back</a>-->
+               <!-- <a id="backButton" href="javascript:;" class="button">Back</a>-->
                 <h1>Peace Corps</h1>
                 <!--<a id="donatebutton" href="#donate" class="button icon heart mini">Donate</a>-->
             </div>
@@ -84,7 +84,7 @@
             </script>
                     <header>
                         <h1>Peace Corps Video</h1>
-                        <a id="backbutton" href="javascript:;" class="button">Back</a>
+                        <a id="backButton" href="javascript:;" class="button">Back</a>
                     </header>
                     <div class="icontainer">
                         <iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%">Your browser doesn't support iFrames.</iframe>
@@ -105,7 +105,7 @@
 			} </script>
            </div>-->
                 
-           <div title='Donate' id="donate" class="panel" data-load="setupDonate" data-defer="donate/donate.html"></div>
+           <div title='Donate' id="donate" class="panel" data-load="setupDonate" data-defer="donate/donate.html" data-tab="navbar_donate"></div>
            <div title='Donate2' id="donate2" class="panel" data-load="setupDonate2" data-defer="donate/donate2.html">
            <!--
            <script>
@@ -159,7 +159,7 @@
 		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
         <header>
             <h1>Peace Corps Video</h1>
-            <a id="backbutton" href="javascript:;" class="button">Back</a>
+            <a id="backButton" href="javascript:;" class="button">Back</a>
         </header>
         <div id="videoframecontainer">
         </div>
@@ -241,7 +241,7 @@
     <div id="navbar">
         <div class="horzRule"></div>
         <a href="#information" id='navbar_info' class='icon info pressed'>Info</a>
-        <a href="#donate" id='navbar_join' class='icon heart'>Donate</a>
+        <a href="#donate" id='navbar_donate' class='icon heart'>Donate</a>
         <a href="#media" id='navbar_media' class='icon picture'>Media</a>
         <a href="#events" id='navbar_events' class='icon calendar'>Events</a>
         <a href="#rpcvmenu" id='navbar_rpcv' class='icon user'>RPCV</a>

@@ -30,7 +30,7 @@
  }
  //--------Hack to load faster -- 
   function onBackKeyDown() {
-	  if ($("#header").find('#backbutton').length==1)
+	  if ($("#header").find('#backButton').length==1)
 	  {$.ui.goBack();}  
 	  
 }
