@@ -17,6 +17,7 @@
 <!-- Import Javascript -->
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="assets/js/jq.appframework.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
@@ -31,7 +32,7 @@
         /* This function runs when the body is loaded.*/
         var init = function () {
         	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
-			
+			console.log("init launch");
         };
         document.addEventListener("DOMContentLoaded", init, false);
 		$.ui.ready(function () {
@@ -95,7 +96,8 @@
 			} </script>
            </div>-->
                 
-           <div title='Donate' id="donate" class="panel" data-load="setupDonate" data-defer="donate.html">
+           <div title='Donate' id="donate" class="panel" data-load="setupDonate" data-defer="donate/donate.html"></div>
+           <div title='Donate2' id="donate2" class="panel" data-load="setupDonate2" data-defer="donate/donate2.html">
            <!--
            <script>
 		    function updateDonate(div){
@@ -114,13 +116,6 @@
 			console.log(doc);
             } </script>-->
             
-                    <header>
-                        <h1>Donate to Peace Corps</h1>
-                        <!--<a id="backbutton" href="javascript:;" class="button">Back</a>-->
-                    </header>
-                     <div class="icontainer">
-                        <iframe src="http://www.peacecorps.gov/about/give/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="donateframe" onLoad="mobilizeDonate(this)">Your browser doesn't support iFrames.</iframe>
-                    </div>
            </div>  
 
             <!-- this is the default left side nav menu.  If you do not want any, do not include these -->

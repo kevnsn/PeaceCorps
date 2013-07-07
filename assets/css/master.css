@@ -119,20 +119,21 @@ body.loading .modal {
 
 /* Donation page css*/
 form fieldset {
-border:0px !important;}
+border:0px !important;
+clear:both!important;}
 /*.form-row {text-align:center !important;}*/
 button[name="submitDonate"] {
 width:100% !important;
 height:35px!important;
 font-size:14px!important;
 }
-
+#ajaxcontent,#localcontent2,#donatepanel2 {padding:8px;}
 form p {
 line-height:1em !important;
 font-size:11px !important;
 }
-
-form h2 {margin-bottom:5px;}
+label {font-size:11px !important;}
+form h2 {margin-top:5px; clear:both;}
 #donateSummaryTable {
 width: 100%;
 text-align: left;
@@ -142,39 +143,56 @@ margin-bottom: 5px;
 .instruction {font-size:11px !important;
 margin-bottom:5px;margin-top:0px;}
 #card_phone {width:66% !important;}
+#forms h2 {clear:both;margin-top:5px;}
+
 .large {clear:both;}
 .form-row-quest {clear:both;}
+
+label[for='donor_type']{padding-right:15px !important;}
+label[for='donor_type_organization']{margin-bottom:10px;}
 .charRemaining, .charRemaining+span {display:none !important;}
-label[for='interest_conflict']{width:85% !important;}
+label[for='dedication'],label[for='card_email_consent']{width:87% !important;}
+label[for='interest_conflict']{width:85% !important;margin-top:15px!important;}
 .submitbutton {width:100%; height:50px; font-size:16px;margin-top:10px;}
-label[for='card_email_consent']{display:none;}
-#card_email_consent {
-display: block!important;
-border: 1px solid #cacece;
-border-radius: 3px;
-top: 8px;
-left: -25px;
-width: 3em;
-height: 3em;
-margin-bottom: 5px;
-}
 label[for='card_source']{padding-top:0px !important;}
 
 form[name='Paymentinfo'] p {display:none;}
 p + h2 {display:block!important;}
 h2 + fieldset {margin-left:20px!important;}
 .actions ul {list-style:none;}
-
-form[name='enterPlasticCardPaymentInformation'] td .label {width:33%;}
-form[name='enterPlasticCardPaymentInformation'] label {width:100%;!important}
-form[='enterPlasticCardPaymentInformation'] input {width:98%;float:right;}
+table[summary='This table is used for layout only.'] {width:97%!important;}
+table[summary='This table is used for layout only.'] td .label {width:33%;}
+table[summary='This table is used for layout only.'] label {width:100%!important;white-space:nowrap!important;}
+table[summary='This table is used for layout only.'] select {width:96% !important;float:right;}
+table[summary='This table is used for layout only.'] input {width:96% !important;float:right;}
 span .rf {float:left;display:inline;}
 .smallItal{font-size:10px;}
 #csh2 {display:none;}
+#cardSecurityCode{width: 50px!important;
+float: left!important;
+margin-left: 6px;}
+
 #cardHolderState2 {display:none;}
 #plasticCardTypeEntered img {display:none;}
 #hlp_sc_pop {display:none;}
-#expirationMonth, #expirationYear {width:30%!important;}
+#expirationMonthEntered {width: 47%!important;float:left;}
+#expirationYearEntered {width: 47%!important;float:right;}
 input[value='Cancel']{display:none !important;}
+.buttons {font-size: 12px;
+color: #CE1717;
+clear:both;}
 
-
+#py_title {
+	color: #003552;
+display: block;
+font-family: 'EB Garamond', serif;
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 8px;
+text-shadow: none;
+}
+.pad2 {font-size:12px!important;}
+#req_note {font-size:12px!important;}
+label[for='authorizeTransaction']{
+width: 88%!important;
+margin-bottom: 10px;}
