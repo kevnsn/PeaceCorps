@@ -3256,7 +3256,7 @@
 
 
     ui.prototype = {
-        transitionTime: "100ms",
+        transitionTime: "0ms",
         showLoading: true,
         loadContentQueue: [],
         isIntel: false,

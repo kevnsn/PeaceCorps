@@ -75,7 +75,7 @@ footer .horzRule { margin:0px auto;}
 #jobtext {padding:10px;}
 #jobtext li {margin-left:25px;}
 #jobtext h1 {text-shadow:none !important;}
-#jobtext h3 {margin-top:10px;}
+#jobtext h3 {margin-top:10px;clear:both;}
 
 #pagelabel {font-size:12px;}
 #prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}

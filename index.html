@@ -36,6 +36,8 @@
 			
 			//localStorage.clear();
 			console.log("init launch");
+			//$("#navbar_donate").click(function(){$.ui.loadContent("donate",false,false,"fade");});
+			navigator.splashscreen.hide();
         };
         document.addEventListener("DOMContentLoaded", init, false);
 		$.ui.ready(function () {
@@ -61,7 +63,7 @@
                 <script>
 				function InitInfo(div) {
 				console.log("Information initialized");	
-				navigator.splashscreen.hide();
+				//navigator.splashscreen.hide();
 				}
 				</script>
                 <!-- here is where you can add your panels -->               
