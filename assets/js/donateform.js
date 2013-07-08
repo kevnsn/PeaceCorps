@@ -180,6 +180,7 @@ $.ajax({
 	$($("#donatepanel2").find('p')[1]).hide()
 	$($("#donatepanel2").find('p')[2]).hide()
 	$("#localcontent2").hide();
+	$('#donatepanel2').scrollTop(0);
         $('button[name="senddata"]').addClass("button submitbutton");
 		$("form[name='Paymentinfo']").attr("action","")
         $("body").removeClass("loading");
