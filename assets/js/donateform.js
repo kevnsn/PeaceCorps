@@ -154,6 +154,7 @@ $.ajax({
 	{localStorage.setItem("cookietemp", temp);}
 	else if (jqXHR.getResponseHeader("Set-Cookie")!=null)
 	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
+	alert("new cookie set as:" + localstorage["cookietemp"]);
 	}
 	
 	//alert(jqXHR.getResponseHeader("Location"));
