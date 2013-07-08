@@ -142,7 +142,7 @@ $.ajax({
 	alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 	if(temp.substring(0,11)=="jsessionid=")
 	{localStorage.setItem("cookietemp", temp);}
-	else if (jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
+	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
 	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie"));
 	}
 	
