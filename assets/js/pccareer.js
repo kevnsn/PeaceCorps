@@ -55,7 +55,7 @@ function showHide(obj, objToHide) {
 			
 radioChange = function () {
 				console.log("radio button activated"); 
-				if ($("#radio-choice-2").attr('checked'))
+				if ($("#radio-choice-2").prop('checked'))
 				{
 					console.log("radio2"); // Domestic filter selected, show state filter
 					$("#countrydiv").hide();
@@ -63,7 +63,7 @@ radioChange = function () {
 					//$('#id_country').selectmenu('refresh');
 					$("#statediv").show();
 					}
-				else if ($("#radio-choice-3").attr('checked'))
+				else if ($("#radio-choice-3").prop('checked'))
 				{
 					console.log("radio3"); // International selected, show country filter
 					$("#statediv").hide();
@@ -144,8 +144,8 @@ checkSubmit = function()
 		 }
 	 }
 	 
-	 var ncecheck= ($("#id_nce").attr('checked')==false) ? "": "&nce=on";
-	 var advcheck= ($("#id_not_advanced_degree_required").attr('checked')==false) ? "": "&not_advanced_degree_required=on";
+	 var ncecheck= ($("#id_nce").prop('checked')==false) ? "": "&nce=on";
+	 var advcheck= ($("#id_not_advanced_degree_required").prop('checked')==false) ? "": "&not_advanced_degree_required=on";
 	 var keyword = "&keyword_search="+$("#search-basic").val();
 	
 	 searchstring = "http://www.peacecorps.gov/resources/returned/careerlink/jobs/"+locationstring+country+state+classif+tagstring+ncecheck+advcheck+keyword;
