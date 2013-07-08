@@ -62,7 +62,7 @@ var submitForm4 = function (){
 console.log ("submitting 3rd ajax");
 $.ajax({
     url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action'),
-    type: 'POST', headers:{"Cookie":localStorage["cookietemp"],"Origin":"https://www.pay.gov"},
+    type: 'POST', headers:{"Cookie":"","Origin":"https://www.pay.gov","Referer":"https://www.pay.gov/paygov/OCIServlet"},
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="enterPlasticCardPaymentInformation"]').serialize()+"&formAction=Continue+with+Plastic+Card+Payment",
     success: function(res,textstat,jqXHR) {
@@ -72,6 +72,7 @@ $.ajax({
 	//alert(jqXHR.getResponseHeader("Location"));
 	if($(res).find('#main p')[1]==undefined)
 	{
+		
 		$("body").removeClass("loading");
 	$("#donatepanel2").html($(res).find('form[name="authorizePaymentForm"]'));
 	var temp = $("label[for='authorizeTransaction']");
@@ -94,10 +95,19 @@ $.ajax({
 		}
 		else {alert("Please authorize the payment to continue.");
 			event.preventDefault();}
-		});
-		
+		});//end new click listener
+	
 	}
-	else /*if ($(res).find('#main p')[1].innerHTML=="We apologize for the error during the donation process. Please try one of the options below to contribute to a Volunteer's community project. We appreciate your patience!")*/{
+	/*if ($(res).find('#main p')[1].innerHTML=="We apologize for the error during the donation process. Please try one of the options below to contribute to a Volunteer's community project. We appreciate your patience!")*/
+	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
+	{
+	localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie"));
+	alert("new cookie detected,saved");
+	submitForm4();
+	}
+	else
+	{
+		alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 		console.log("error in payment");
 		 $("body").removeClass("loading");
 		 alert("There was an error in your payment.  Please check your information and try again");
