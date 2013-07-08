@@ -54,11 +54,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		alert("Device ready");
+		/*alert("Device ready");
 		devplatorm = device.platform;
 		devversion = device.version;
 		document.addEventListener("backbutton", onBackKeyDown, false);
 		alert(devplatform);
-		alert(devversion);		
+		alert(devversion);*/		
     }
 };
