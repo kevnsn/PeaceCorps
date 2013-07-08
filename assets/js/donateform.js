@@ -33,7 +33,7 @@ var submitForm5 = function () {
 	//START FINAL AJAX
 	$.ajax({
     url: "https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm",
-    type: 'POST', headers:{"Cookie":cookietemp},
+    type: 'POST', headers:{"Cookie":localcStorage["cookietemp"]},
     data: $('form[action="https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm"]').serialize(),
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     success: function(res) {
@@ -61,8 +61,8 @@ var submitForm5 = function () {
 var submitForm4 = function (){
 console.log ("submitting 3rd ajax");
 $.ajax({
-    url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action'),
-    type: 'POST', headers:{"Cookie":"","Origin":"https://www.pay.gov","Referer":"https://www.pay.gov/paygov/OCIServlet"},
+    url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action')+";"+localStorage["cookietemp"],
+    type: 'POST', headers:{"Cookie":localStorage["cookietemp"],"Origin":"https://www.pay.gov","Referer":"https://www.pay.gov/paygov/OCIServlet"},
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="enterPlasticCardPaymentInformation"]').serialize()+"&formAction=Continue+with+Plastic+Card+Payment",
     success: function(res,textstat,jqXHR) {
@@ -101,7 +101,7 @@ $.ajax({
 	/*if ($(res).find('#main p')[1].innerHTML=="We apologize for the error during the donation process. Please try one of the options below to contribute to a Volunteer's community project. We appreciate your patience!")*/
 	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
 	{
-	localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie"));
+	localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
 	alert("new cookie detected,saved");
 	submitForm4();
 	}
@@ -153,7 +153,7 @@ $.ajax({
 	if(temp.substring(0,11)=="jsessionid=")
 	{localStorage.setItem("cookietemp", temp);}
 	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
-	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie"));
+	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
 	}
 	
 	//alert(jqXHR.getResponseHeader("Location"));
