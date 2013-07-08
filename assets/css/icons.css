@@ -19,12 +19,14 @@ top:3px;
 margin-right:15px;
 }
 
-#navbar .icon2:before {
+#navbar_info:before,#navbar_media:before,#navbar_donate:before,#navbar_events:before,#navbar_rpcv:before{
 margin-top: -17px !important;
 padding-left: 0px !important;
 margin-left:0px!important;
 font-size: 31.5px !important;
-line-height: 55px !important;}
+line-height: 55px !important;
+left:0px!important;
+}
 
 #bottomcontainer .icon:before {
 padding-top:0px !important;

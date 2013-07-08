@@ -99,7 +99,7 @@ $.ajax({
 	
 	}
 	/*if ($(res).find('#main p')[1].innerHTML=="We apologize for the error during the donation process. Please try one of the options below to contribute to a Volunteer's community project. We appreciate your patience!")*/
-	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
+	else if (jqXHR.getResponseHeader("Set-Cookie")!=null)
 	{
 	localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
 	alert("new cookie detected,saved");
@@ -152,7 +152,7 @@ $.ajax({
 	alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 	if(temp.substring(0,11)=="jsessionid=")
 	{localStorage.setItem("cookietemp", temp);}
-	else if (jqXHR.getResponseHeader("Set-Cookie")!=null&&jqXHR.getResponseHeader("Set-Cookie").substring(0,10)=="JSESSIONID")
+	else if (jqXHR.getResponseHeader("Set-Cookie")!=null)
 	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
 	}
 	
@@ -190,7 +190,7 @@ $.ajax({
 	$($("#donatepanel2").find('p')[1]).hide()
 	$($("#donatepanel2").find('p')[2]).hide()
 	$("#localcontent2").hide();
-	$('#donatepanel2').scrollTop(0);
+	$('#localcontent2').scrollTop(0);
         $('button[name="senddata"]').addClass("button submitbutton");
 		$("form[name='Paymentinfo']").attr("action","")
         $("body").removeClass("loading");
