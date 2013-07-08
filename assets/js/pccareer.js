@@ -156,13 +156,14 @@ checkSubmit = function()
 
 updateSearch = function(urlstring,pagenumber) {
 	//console.log("spinner deployed");
-	//$("body").addClass("loading");
+	$("body").addClass("loading");
 	$.ajax({
     url: urlstring+"&page="+pagenumber,
     type: 'GET',	
-	error: function(){alert("There was an error connecting to the database.  Please check your connection and try again.");},
+	error: function(){$("body").removeClass("loading");alert("There was an error connecting to the database.  Please check your connection and try again.");},
     success: function(res) {
 		
+	$(".expanded").trigger('click');
 		$("body").removeClass("loading");
        // var headline = $(res.responseText).find('a.tsh').text();
 	   console.log("AJAX success");
@@ -182,9 +183,9 @@ updateSearch = function(urlstring,pagenumber) {
 		
 		//adjust buttons accordingly:
 		  $('#nextbutton').removeClass('ui-disabled');
-		  $('#nextbutton').attr("disabled","");
+		  $('#nextbutton').removeAttr("disabled");
 		  $('#prevbutton').removeClass('ui-disabled');
-		 $('#prevbutton').attr("disabled","");
+		 $('#prevbutton').removeAttr("disabled");
 		if(currpage==pages)
 		{$('#nextbutton').addClass('ui-disabled');
 		  $('#nextbutton').attr("disabled","true");}
@@ -260,7 +261,7 @@ changePage = function(joburl) {
 	 datastring = $(res).find('div#main');
 	// console.log(datastring);
 	$("#jobtext").html(datastring);
-	$("#jobtext a").bind("click", function(e){loadURL(this.getAttribute('href')); /*test = this;*/e.preventDefault(); return false;});
+	$("#jobtext a").bind("click", function(e){ /*test = this;*/e.preventDefault(); /*alert(this.getAttribute('href'));*/loadURL(this.getAttribute('href'));return false;});
 	$("#jobcontainer").show();
 	$("#resultcontainer").hide();
 	$("body").removeClass("loading");
@@ -268,7 +269,13 @@ changePage = function(joburl) {
 	});
 }
 
-	function loadURL(url){navigator.app.loadUrl(url, { openExternal:true });} 
+	function loadURL(url){
+		if(devplatform=="iPhone")
+		var ref = window.open('http://google.com', '_system');
+		else
+		{
+		navigator.app.loadUrl(url, { openExternal:true });}
+		} 
 
 part2=function(){
 	  //Hide state and country input fields

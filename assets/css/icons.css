@@ -18,6 +18,13 @@ position:relative;
 top:3px;
 margin-right:15px;
 }
+#navbar .icon:before {
+margin-top: -17px !important;
+padding-left: 0px !important;
+margin-left:0px!important;
+font-size: 31.5px !important;
+line-height: 55px !important;}
+
 #bottomcontainer .icon:before {
 padding-top:0px !important;
 }
