@@ -37,7 +37,7 @@
 			//localStorage.clear();
 			console.log("init launch");
 			//$("#navbar_donate").click(function(){$.ui.loadContent("donate",false,false,"fade");});
-			navigator.splashscreen.hide();
+			//navigator.splashscreen.hide();
         };
         document.addEventListener("DOMContentLoaded", init, false);
 		$.ui.ready(function () {
@@ -63,7 +63,8 @@
                 <script>
 				function InitInfo(div) {
 				console.log("Information initialized");	
-				//navigator.splashscreen.hide();
+				removeLoad();
+				navigator.splashscreen.hide();
 				}
 				</script>
                 <!-- here is where you can add your panels -->               
@@ -142,14 +143,14 @@
             <!-- Start content panels -->
             
      <!-- Media Panels -->
-     <div title='Media' id="media" class="panel" data-defer="media.html"></div> 
+     <div title='Media' id="media" class="panel" data-defer="media.html" data-load="removeLoad"></div> 
      <div title='Blog' id="blog" class="panel" data-defer="media/blog.html" data-load="updateBlog"></div> 
             <script>
 			function updateBlog(div){
 		   //alert("loading video");
 		   $('body').addClass('loading');
 		   $('#blogframecontainer').empty();
-		   $('#blogframecontainer').append('<iframe src="http://passport.peacecorps.gov/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; z-index:-1;" id="blogframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   $('#blogframecontainer').append('<iframe src="http://passport.peacecorps.gov/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;" id="blogframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
 		   $("#blogframe").height($('#blog').height());
 		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
      <div title='Video' id="video" class="panel" data-load="updateVid">
@@ -157,22 +158,22 @@
 		   //alert("loading video");
 		   $('body').addClass('loading');
 		   $('#videoframecontainer').empty();
-		   $('#videoframecontainer').append('<iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; z-index:-1;" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
-		   $("#videoframe").height($('#video').height());
+		   $('#videoframecontainer').append('<iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   //$("#videoframe").height($('#video').height());
 		   //$('body').removeClass('loading');
 		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
         <header>
             <h1>Peace Corps Video</h1>
             <a id="backButton" href="javascript:;" class="button">Back</a>
         </header>
-        <div id="redditframecontainer">
+        <div id="videoframecontainer">
         </div>
         </div>
         <script>
 		function updateReddit(div){
 			$('body').addClass('loading');
 		   $('#redditframecontainer').empty();
-		   $('#redditframecontainer').append('<iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; z-index:-1;" id="redditframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   $('#redditframecontainer').append('<iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:1;" id="redditframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
 		   $("#redditframe").height($('#reddit').height());
 			}
 		</script>
@@ -180,7 +181,7 @@
     </div>
      
      <!--RPCV Panels -->
-     <div title='RPCV' id="rpcvmenu" class="panel" data-defer="rpcv.html"></div> 
+     <div title='RPCV' id="rpcvmenu" class="panel" data-defer="rpcv.html" data-load="removeLoad"></div> 
      <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2"></div>
     <!-- <script>function careerInit(div){/*alert("career init");*/part2();}</script>-->
      <div title='Resources' id="rpcvresources" class="panel" data-defer="rpcv/resources.html"></div>
@@ -239,6 +240,9 @@
     </div>
     <div title='Professional and Career Benefits' id="profbenefit" class="panel" data-defer="info/benefit/profbenefit.html">
     </div>
+
+<!-- Events Panels -->
+     <div title='Events' id="events" class="panel" data-defer="events.html" data-load="removeLoad"></div> 
 
     </div><!-- end content -->
    

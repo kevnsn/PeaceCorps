@@ -1,8 +1,11 @@
-body {margin:0px;padding:0px;}
+body {margin:0px;padding:0px;background:#003552;}
+#afui{background:#003552!important;}
 .localcontentpanel{
 padding:15px !important;
 min-width:100%;
 min-height:100%;}
+
+#content{background:#E1DEC7!important;}
 
 h1 {
 	font-family: 'EB Garamond', serif !important;
@@ -38,7 +41,12 @@ border-width:1px;
 	text-shadow:none;
 }
 
-#navbar .icon {}
+#navbar .icon:before {
+margin-top: -17px !important;
+padding-left: 0px !important;
+margin-left:0px!important;
+font-size: 31.5px !important;
+line-height: 55px !important;}
 
 #navbar a {top:-1px !important; height:49px!important; width:55px !important;
 font-size: 11px!important;
@@ -46,12 +54,6 @@ font-family: Helvetica;
 /*margin-top: 5px!important;*/
 padding-top: 4px;}
 
-#afui #navbar .icon:before{
-margin-top: -17px !important;
-padding-left: 0px !important;
-font-size: 31.5px !important;
-line-height: 55px !important;
-}
 
 footer {
 	text-align:center;

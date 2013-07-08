@@ -221,6 +221,7 @@ $.ajax({
 
 //Upon load of page, set up validation script parameters
 setupDonate = function () {
+	removeLoad();
 	console.log("donate form loaded");	
 	$('button[name="submit"]').addClass("button submitbutton");
 	$('#localcontent2').show()
