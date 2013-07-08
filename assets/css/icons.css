@@ -18,14 +18,14 @@ position:relative;
 top:3px;
 margin-right:15px;
 }
-
+#navbar a {text-align:center;}	
 #navbar_info:before,#navbar_media:before,#navbar_donate:before,#navbar_events:before,#navbar_rpcv:before{
 margin-top: -17px !important;
 padding-left: 0px !important;
-margin-left:0px!important;
+margin-left:-17px!important;
 font-size: 31.5px !important;
 line-height: 55px !important;
-left:0px!important;
+left:inherit!important;
 }
 
 #bottomcontainer .icon:before {
