@@ -21,8 +21,8 @@
  //Helper methods to check for form completion and change button status.
 // var addformlisteners;
  //var checkSubmit;
- var devplatorm = device.platform;
- var devversion = device.version;
+ var devplatorm;
+ var devversion;
  
  function addLoad() {
 	 $('body').addClass('loading');
@@ -54,10 +54,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		
+		devplatorm = device.platform;
+		devversion = device.version;
 		document.addEventListener("backbutton", onBackKeyDown, false);
 		alert(devplatform);
-		alert(devversion);
-		
-		
+		alert(devversion);		
     }
 };
