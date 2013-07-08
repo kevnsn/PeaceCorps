@@ -272,7 +272,7 @@ body {
   -webkit-perspective: 1000;
 }
 #afui .panel h2 {
-  color: #003552;
+  color:#005f7e/* #003552*/;
 }
 #afui #navbar {
   position: absolute;
@@ -632,7 +632,7 @@ body {
 #afui .list > li > a:after {
   position: absolute;
   right: 8px;
-  color: #B87448!important;
+  color: orange!important;
   font-family: 'chevron';
   speak: none;
   font-style: normal;

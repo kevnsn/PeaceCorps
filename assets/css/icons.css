@@ -18,7 +18,8 @@ position:relative;
 top:3px;
 margin-right:15px;
 }
-#navbar .icon:before {
+
+#navbar .icon2:before {
 margin-top: -17px !important;
 padding-left: 0px !important;
 margin-left:0px!important;
