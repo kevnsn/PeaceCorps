@@ -150,6 +150,7 @@
 		   $('body').addClass('loading');
 		   $('#blogframecontainer').empty();
 		   $('#blogframecontainer').append('<iframe src="http://passport.peacecorps.gov/" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="blogframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   $("#blogframe").height($('#blogframecontainer').height());
 		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
      <div title='Video' id="video" class="panel" data-load="updateVid">
        <script> function updateVid(div){
@@ -157,13 +158,14 @@
 		   $('body').addClass('loading');
 		   $('#videoframecontainer').empty();
 		   $('#videoframecontainer').append('<iframe id="videoframe" src="media/video.html" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   $("#videoframe").height($('#videoframecontainer').height());
 		   //$('body').removeClass('loading');
 		   /*document.getElementById('videoframe').contentWindow.prepareYoumax();*/}</script>
         <header>
             <h1>Peace Corps Video</h1>
             <a id="backButton" href="javascript:;" class="button">Back</a>
         </header>
-        <div id="videoframecontainer">
+        <div id="redditframecontainer">
         </div>
         </div>
         <script>
@@ -171,6 +173,7 @@
 			$('body').addClass('loading');
 		   $('#redditframecontainer').empty();
 		   $('#redditframecontainer').append('<iframe src="http://www.reddit.com/r/peacecorps/.compact" style="border: 0; position:relative; top:0; left:0; right:0; bottom:0; width:100%; height:100%" id="redditframe" onload="removeLoad();">Your browser does not support iFrames.</iframe>');
+		   $("#redditframe").height($('#redditframecontainer').height());
 			}
 		</script>
      <div title='Reddit' id="reddit" class="panel" data-load="updateReddit" data-defer="media/reddit.html">

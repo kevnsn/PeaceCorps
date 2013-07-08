@@ -1,3 +1,4 @@
+body {margin:0px;padding:0px;}
 .localcontentpanel{
 padding:15px !important;
 min-width:100%;
@@ -39,11 +40,15 @@ border-width:1px;
 
 #navbar .icon {}
 
-#navbar a {top:-1px !important; height:49px!important; width:55px !important;font:normal 11px/75px Arial, Helvetica, sans-serif !important;}
+#navbar a {top:-5px !important; height:49px!important; width:55px !important;
+font-size: 11px!important;
+font-family: Helvetica;
+margin-top: 5px!important;
+padding-top: 4px;}
 
 #afui #navbar .icon:before{
 margin-top: -17px !important;
-margin-left: -10.5px !important;
+margin-left: -6px !important;
 font-size: 31.5px !important;
 line-height: 55px !important;
 }
@@ -74,8 +79,8 @@ footer .horzRule { margin:0px auto;}
 
 #jobtext {padding:10px;}
 #jobtext li {margin-left:25px;}
-#jobtext h1 {text-shadow:none !important;}
-#jobtext h3 {margin-top:10px;clear:both;}
+#jobtext h1 {text-shadow:none !important;display:block;}
+#jobtext h3 {margin-top:12px;clear:both!important;}
 
 #pagelabel {font-size:12px;}
 #prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}
