@@ -5,6 +5,17 @@ padding:15px !important;
 min-width:100%;
 min-height:100%;}
 
+.icondiv {
+    font-family: 'IcoMoon';
+    padding: 0px;
+    height: 0px;
+    font-size: 35px!important;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+	margin-bottom:3px;
+    bottom: 18px;
+}
 #content{background:#E1DEC7!important;}
 
 h1 {
@@ -43,7 +54,7 @@ border-width:1px;
 
 
 
-#navbar a {top:-1px !important; height:49px!important; width:55px !important;
+#navbar a {top:-1px !important; height:52px!important; width:55px !important;
 font-size: 11px!important;
 font-family: Helvetica;
 /*margin-top: 5px!important;*/
