@@ -40,15 +40,15 @@ border-width:1px;
 
 #navbar .icon {}
 
-#navbar a {top:-5px !important; height:49px!important; width:55px !important;
+#navbar a {top:-1px !important; height:49px!important; width:55px !important;
 font-size: 11px!important;
 font-family: Helvetica;
-margin-top: 5px!important;
+/*margin-top: 5px!important;*/
 padding-top: 4px;}
 
 #afui #navbar .icon:before{
 margin-top: -17px !important;
-margin-left: -6px !important;
+padding-left: 0px !important;
 font-size: 31.5px !important;
 line-height: 55px !important;
 }
