@@ -1,3 +1,29 @@
+/* Modal sheet */
+.modalinfo {display:none!important;}
+.simplemodal-overlay {background-color:rgba(0,0,0,1);}
+#simplemodal-container{background-color:rgba(250,250,250,1); -webkit-border-radius: 10px;}
+#education1 { margin:15px;}
+.simplemodal-wrap{}
+.simplemodal-data {}
+.menulogo {margin-right:6px; font-size:18px;}
+
+#closebutton{
+  -webkit-border-radius: 5px;
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-weight: bold;
+  color: #fff;/*#000;*/
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: #24173F;/*#eee;*/
+  border: 1px solid #666;
+  text-decoration: none;
+  z-index: 2;
+}
+.simplemodal-data p {margin-top:5px;margin-bottom:5px;}
 body {margin:0px;padding:0px;background:#003552;color:#45413e;}
 #afui{background:#003552!important;}
 .localcontentpanel{
@@ -15,11 +41,16 @@ min-height:100%;}
     margin-right: auto!important;
 	margin-bottom:3px!important;
     bottom: 18px!important;*/
-	font-size: 25px;
+font-size: 24px!important;
+margin-top: 2px!important;
 display: block!important;
 height: 0px!important;
+margin-bottom: -1px!important;
 }
-#content{background:#E1DEC7!important;}
+
+.sectors {font-size:12px;}
+.sectors > li > a {padding:10px 24px 10px 10px!important;}
+#content{background:#EDF3DE!important;/*#E1DEC7!important;*/}
 
 h1 {
 	font-family: 'EB Garamond', serif !important;
@@ -42,6 +73,10 @@ border-width:1px;
 /*border-color:transparent transparent #DBD8C5 transparent;*/
 /*top left bottom right */
 }
+
+.localcontentpanel h3 {margin-top:12px;}
+
+.localcontentpanel h4 {margin-top:9px;margin-bottom:2px;}
 
  /* Info page styling */
 #mainmenu {margin-top:30px !important; margin-bottom:15px !important;}

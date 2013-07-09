@@ -18,7 +18,8 @@ var submitForm5 = function () {
 	{
 			alert("no error message,using html");
 	$("#donatepanel2").html($(res).find('form[name="authorizePaymentForm"]'));
-	alert("form replaced, submitting second ajax");
+	alert("form replaced, submitting second form");
+	
 	$.ajax({
     url: "https://pay.gov"+$('form[name="authorizePaymentForm"]').attr('action'),
     type: 'POST', headers:{"Cookie":localStorage["cookietemp"]},
@@ -27,17 +28,19 @@ var submitForm5 = function () {
     success: function(res) {
 	console.log(res);
 	$("#donatepanel2").html(res);
+	alert("second form success");
 	var tempdata=$('form[action="https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm"]').serialize();
 	console.log("submitted to peacecorps sucess page");
 	console.log(tempdata);
 	//START FINAL AJAX
 	$.ajax({
     url: "https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm",
-    type: 'POST', headers:{"Cookie":localcStorage["cookietemp"]},
+    type: 'POST',/* headers:{"Cookie":localcStorage["cookietemp"]},*/
     data: $('form[action="https://donate.peacecorps.gov/donate/contribute/pgsuccess.cfm"]').serialize(),
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     success: function(res) {
 	$("#donatepanel2").html($(res).find("#main"));
+	alert("all donate forms success");
 	$("body").removeClass("loading");
 	$($("#main").find('p')[2]).hide()
 	$("#main").append("<a class='button' href='#donate'>Back to Donate</a>")
@@ -61,13 +64,22 @@ var submitForm5 = function () {
 var submitForm4 = function (){
 console.log ("submitting 3rd ajax");
 $.ajax({
-    url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action')+";"+localStorage["cookietemp"],
-    type: 'POST', headers:{"Cookie":localStorage["cookietemp"],"Origin":"https://www.pay.gov","Referer":"https://www.pay.gov/paygov/OCIServlet"},
+    url: "https://pay.gov"+$('form[name="enterPlasticCardPaymentInformation"]').attr('action')/*+";"+localStorage["cookietemp"]*/,
+	xhrFields: {
+           withCredentials: true
+      },
+      crossDomain: true,
+	beforeSend: function (request)
+            {
+				console.log("using beforesend to change header");
+                request.setRequestHeader("Cookie"),localStorage["cookietemp"];
+            },
+    type: 'POST', headers:{"Cookie":localStorage["cookietemp"]/*,"Origin":"https://www.pay.gov","Referer":"https://www.pay.gov/paygov/OCIServlet"*/},
 	error: function(error) {alert("Error submitting form.  Check your network connection.");$("body").removeClass("loading");},
     data:$('form[name="enterPlasticCardPaymentInformation"]').serialize()+"&formAction=Continue+with+Plastic+Card+Payment",
     success: function(res,textstat,jqXHR) {
     alert("ajax to pay.gov payment succcesful");
-	console.log(res);
+	//console.log(res);
 	//alert(jqXHR.getResponseHeader("Set-Cookie"));
 	//alert(jqXHR.getResponseHeader("Location"));
 	if($(res).find('#main p')[1]==undefined)
@@ -101,6 +113,7 @@ $.ajax({
 	/*if ($(res).find('#main p')[1].innerHTML=="We apologize for the error during the donation process. Please try one of the options below to contribute to a Volunteer's community project. We appreciate your patience!")*/
 	else if (jqXHR.getResponseHeader("Set-Cookie")!=null)
 	{
+		alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 	localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
 	alert("new cookie detected,saved");
 	submitForm4();
@@ -151,10 +164,11 @@ $.ajax({
 	alert(temp);
 	alert("xhr:"+jqXHR.getResponseHeader("Set-Cookie"));
 	if(temp.substring(0,11)=="jsessionid=")
-	{localStorage.setItem("cookietemp", temp);}
+	{localStorage.setItem("cookietemp", temp);
+	alert("using old cookie:" +temp);}
 	else if (jqXHR.getResponseHeader("Set-Cookie")!=null)
 	{localStorage.setItem("cookietemp", jqXHR.getResponseHeader("Set-Cookie").substring(0,75));
-	alert("new cookie set as:" + localstorage["cookietemp"]);
+	alert("new cookie set as:" + localStorage["cookietemp"]);
 	}
 	
 	//alert(jqXHR.getResponseHeader("Location"));

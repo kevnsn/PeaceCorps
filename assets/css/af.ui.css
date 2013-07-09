@@ -632,7 +632,7 @@ body {
 #afui .list > li > a:after {
   position: absolute;
   right: 8px;
-  color: orange!important;
+  color: #D8B473/*orange*/!important;
   font-family: 'chevron';
   speak: none;
   font-style: normal;
