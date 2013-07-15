@@ -4126,7 +4126,7 @@
 
             container = container || this.content;
             //sets up scroll when required and not supported
-            if (!$.feat.nativeTouchScroll && hasScroll) tmp.setAttribute("js-scrolling", "false");
+            if (!$.feat.nativeTouchScroll && hasScroll) tmp.setAttribute("js-scrolling", "true");
 
             if (tmp.getAttribute("js-scrolling") && (tmp.getAttribute("js-scrolling").toLowerCase() == "yes" || tmp.getAttribute("js-scrolling").toLowerCase() == "true")) {
                 jsScroll = true;

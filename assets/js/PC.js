@@ -32,6 +32,7 @@
  }
  //--------Hack to load faster -- 
   function onBackKeyDown() {
+	  alert("back key loaded");
 	  if ($("#header").find('#backButton').length==1)
 	  {$.ui.goBack();}  
 	  
@@ -54,10 +55,17 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		/*alert("Device ready");
-		devplatorm = device.platform;
-		devversion = device.version;
-		document.addEventListener("backbutton", onBackKeyDown, false);
+		alert("Device ready, button intitated");
+		//devplatorm = device.platform;
+		//devversion = device.version;
+		document.addEventListener("backbutton", function(e){
+		if ($("#simplemodal-container").html()!=undefined){ // if the modal is showing
+			modal.close();
+		}
+		else if ($("#header").find('#backButton').length==1)
+		{$.ui.goBack();}  
+	  	e.preventDefault();
+	  	}, false);/*
 		alert(devplatform);
 		alert(devversion);*/		
     }
