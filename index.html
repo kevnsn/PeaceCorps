@@ -18,26 +18,22 @@
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
 
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/jq.appframework.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.js"></script>
-<!-- Scripts for deferred loading -->
-<!--<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>-->
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/donateform.js"></script>
 <!-- Import jqMobi plugins -->
-
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery.simplemodal.1.4.4.min.js"></script>
 
 
 <!-- Initilization Javascript -->
 <script type="text/javascript">
-        $.ui.autoLaunch = true; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
         /* This function runs when the body is loaded.*/
         var init = function () {
         	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
-			
 			//localStorage.clear();
 			console.log("init launch");
 			//$("#navbar_donate").click(function(){$.ui.loadContent("donate",false,false,"fade");});
@@ -51,6 +47,35 @@
             //This function will get executed when $.ui.launch has completed
         });
     </script>
+    
+    <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but phonegap-1.0.0.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    // 
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    function onDeviceReady() {
+		alert("Device ready, button intitated");
+		//devplatorm = device.platform;
+		//devversion = device.version;
+		document.addEventListener("backbutton", function(e){
+		if ($("#simplemodal-container").html()!=undefined){ // if the modal is showing
+			modal.close();
+		}
+		else if ($("#header").find('#backButton').length==1)
+		{$.ui.goBack();}  
+	  	e.preventDefault();
+	  	}, false);/*
+		alert(devplatform);
+		alert(devversion);*/		
+    }
+
+</script>
 </head>
 	<body>
         <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->

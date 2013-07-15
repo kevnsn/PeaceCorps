@@ -38,6 +38,7 @@
 	  
 }
 
+/*
 var app = {
     // Application Constructor
     initialize: function() {
@@ -67,6 +68,6 @@ var app = {
 	  	e.preventDefault();
 	  	}, false);/*
 		alert(devplatform);
-		alert(devversion);*/		
+		alert(devversion);	
     }
-};
+};*/	
