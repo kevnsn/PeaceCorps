@@ -90,7 +90,10 @@ border-width:1px;
 	text-shadow:none;
 }
 
-
+.nodecorationlist li {
+list-style:none;
+margin-bottom:9px;
+}
 
 #navbar a {top:-1px !important; height:49px!important; width:55px !important;
 font-size: 11px!important;

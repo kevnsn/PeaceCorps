@@ -30,6 +30,9 @@
 <!-- Import jqMobi plugins -->
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery.simplemodal.1.4.4.min.js"></script>
 
+<!-- For web interface functionality -->
+<script type="text/javascript" charset="utf-8" src="assets/js/jquery.xdomainajax.js"></script>
+
 
 <!-- Initilization Javascript -->
 <script type="text/javascript">
@@ -222,7 +225,10 @@
      
      <!--RPCV Panels -->
      <div title='RPCV' id="rpcvmenu" class="panel" data-defer="rpcv.html" data-load="removeLoad"></div> 
-     <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2"></div>
+     <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2" data-tab="navbar_career"></div>
+     <div title='RPCV Career Center' id="careercenter" class="panel" data-defer="rpcv/careercener.html"></div> 
+     <div title='Coverdell' id="coverdell" class="panel" data-defer="rpcv/coverdell.html"></div> 
+     <div title='Response' id="response" class="panel" data-defer="rpcv/response.html"></div> 
      
      <!--Event Tab -->
      
@@ -234,6 +240,11 @@
     <div title='Fast Facts' id="fastfacts" class="panel" data-defer="info/fastfacts.html">
     </div>
     <div title='Core Expectations' id="expectations" class="panel" data-defer="info/expectations.html">
+    </div>
+    <!-- Other Application Panels -->
+    <div title='How to Become a Volunteer' id="howvolunteer" class="panel" data-defer="info/howvolunteer.html">
+    </div>
+    <div title='Tips' id="tips" class="panel" data-defer="info/tips.html">
     </div>
     
     <!-- Eligibility Panels -->       
@@ -310,7 +321,7 @@
         <a href="#media" id='navbar_media'><i class="icon-picture navbaricon"></i><span>Media</span></a>
         <a href="#events" id='navbar_events'><i class="icon-calendar navbaricon"></i><span>Events</span></a>
         <a href="#rpcvmenu" id='navbar_rpcv' class='icon user icon2'><i class="icon-globe navbaricon"></i><span>RPCV</span></a>
-        <a href="#career" id='navbar_donate' ><i class="icon-briefcase navbaricon"></i><span>Career</span></a>
+        <a href="#career" id='navbar_career' ><i class="icon-briefcase navbaricon"></i><span>Career</span></a>
     </div>  
     </div><!--end afUI -->
 
