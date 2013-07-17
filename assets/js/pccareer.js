@@ -82,9 +82,10 @@ radioChange = function () {
  function addForm() {
 	 console.log("Form listeners started");
 	 //Add button listener
-	 $("#requestbutton").click(function() {
+	 $("#requestbutton").click(function(e) {
 		  $("body").addClass("loading");
 		  checkSubmit();
+		  e.preventDefault();
 		  });
 		
 		$("#nextbutton").click(function() {
@@ -162,7 +163,6 @@ updateSearch = function(urlstring,pagenumber) {
     type: 'GET',	
 	error: function(){$("body").removeClass("loading");alert("There was an error connecting to the database.  Please check your connection and try again.");},
     success: function(res) {
-		
 	$(".expanded").trigger('click');
 		$("body").removeClass("loading");
        // var headline = $(res.responseText).find('a.tsh').text();
