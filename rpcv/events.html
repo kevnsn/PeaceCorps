@@ -1,5 +1,5 @@
 <header>
-	<h1>Events</h1>
+	<h1>Peace Corps Events</h1>
     <a id="backButton" href="javascript:;" class="button">Back</a>
     <style>
 #afui .input-group input:not([type='button']):not([type='submit']), #afui .input-group textarea, #afui .input-group select {
@@ -16,7 +16,7 @@ width:100%;
 </style>
 </header>
 <div class="localcontentpanel">
-<h2>Peace Corps Events</h2>
+<h2>Find local events</h2>
 <p class="introtext"></p>
 
  <div class="input-group" id = "searchform">
@@ -85,9 +85,9 @@ width:100%;
             <label for="id_keyword_search" id ="searchlabel">Keyword search:</label>
 			<input type="search" name="search" id="event_id_keyword_search" value="" data-mini="false"/>
 		</form>
-        <a href="#" class="button" type = "submit" id = "eventrequestbutton" style="width:100%">Search and Update Results<i class="icon-rotate-left" style="margin-left:10px;"></i></a>
+        <a href="#" class="button" type = "submit" id = "event_requestbutton">Search and Update Results<i class="icon-rotate-left" style="margin-left:10px;"></i></a>
         </div>
-        <!--</div>-->
+        </div>
         
     <div id="eventresultcontainer">
         <p id="eventnote"></p>
@@ -99,22 +99,22 @@ width:100%;
     <table style="width:100%" id="bottomtable">
     <tr>
     <td>
-    <button ref="#" id="eventprevbutton" class="button "><i class="icon-chevron-sign-left" style="margin-right:5px;"></i>Previous</button>
+    <button ref="#" id="event_prevbutton" class="button "><i class="icon-chevron-sign-left" style="margin-right:5px;"></i>Previous</button>
     </td>
     <td>
    	<div id="eventpagelabel"></div>
     </td>
     <td style="text-align:right;">
-    <button href="#" id = "eventnextbutton" class="button">Next<i class="icon-chevron-sign-right" style="margin-left:5px;"></i></button>
+    <button href="#" id = "event_nextbutton" class="button">Next<i class="icon-chevron-sign-right" style="margin-left:5px;"></i></button>
     </td>
     </tr>
     </table>
     		</div>
 		</div>
-    </div>
+	</div>
     
      <div id="eventjobcontainer" style="display:none;">
-     <a href="#" id = "eventbackresultbutton" class="button"><i class="icon-chevron-left" style="margin-right:5px;"></i>Back to Results</a>
+     <a href="#" id = "event_backresultbutton" class="button"><i class="icon-chevron-left" style="margin-right:5px;"></i>Back to Results</a>
      <div id="eventjobtext"></div>
      </div>
     

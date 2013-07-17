@@ -270,11 +270,7 @@ changePage = function(joburl) {
 }
 
 	function loadURL(url){
-		if(devplatform=="iPhone")
-		var ref = window.open('http://google.com', '_system');
-		else
-		{
-		navigator.app.loadUrl(url, { openExternal:true });}
+		var ref = window.open(url, '_system');
 		} 
 
 part2=function(){

@@ -111,25 +111,25 @@ footer .horzRule { margin:0px auto;}
 
 /* Career Styling */
 
-#reslist li {
-	padding: 8px 15px 8px 8px !important;
+#eventreslist li, #reslist li {
+	padding: 0px 15px 8px 8px !important;
 }
 
-#reslist h3 {
+#eventreslist h3, #reslist h3 {
 	font-size:13px;
 }
-#reslist h4 {
+#eventreslist h4, #reslist h4 {
 	font-size:11px;
 }
 
 
-#jobtext {padding:10px;}
-#jobtext li {margin-left:25px;}
-#jobtext h1 {text-shadow:none !important;display:block;}
-#jobtext h3 {margin-top:12px;clear:both!important;}
+#eventjobtext, #jobtext {padding:10px;}
+#eventjobtext li, #jobtext li {margin-left:25px;}
+#eventjobtext h1, #jobtext h1 {text-shadow:none !important;display:block;}
+#eventjobtext h3, #jobtext h3 {margin-top:12px;clear:both!important;}
 
-#pagelabel {font-size:12px;}
-#prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}
+#eventpagelabel, #pagelabel {font-size:12px;}
+/*#prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}*/
 
 .ui-disabled {
 	color:#CF9F9F !important;
@@ -236,7 +236,8 @@ clear:both;}
 #py_title {
 	color: #003552;
 display: block;
-font-family: 'EB Garamond', serif;
+/*font-family: 'EB Garamond', serif;*/
+font-family: 'Bree Serif', serif;
 font-size: 22px;
 font-weight: bold;
 margin-bottom: 8px;

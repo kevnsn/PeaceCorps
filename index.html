@@ -13,6 +13,7 @@
 <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
 <!-- Import Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
 <!-- Import Javascript -->
 <!--<script type="text/javascript" charset="utf-8" src="assets/js/appframework.min.js"></script>--> 
@@ -24,6 +25,7 @@
 <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/PC.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/pccareer.js"></script>
+<script type="text/javascript" charset="utf-8" src="assets/js/pcevent.js"></script>
 <script type="text/javascript" charset="utf-8" src="assets/js/donateform.js"></script>
 <!-- Import jqMobi plugins -->
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery.simplemodal.1.4.4.min.js"></script>
@@ -64,7 +66,17 @@
 		//devplatorm = device.platform;
 		//devversion = device.version;
 		document.addEventListener("backbutton", function(e){
-		if ($("#simplemodal-container").html()!=undefined){ // if the modal is showing
+			if ($("#jobcontainer").is(':visible')) //back button binding for the career page
+			{
+			$("#jobcontainer").hide();
+			$("#resultcontainer").show();
+			}
+			else if ($("#eventjobcontainer").is(':visible')) //back button binding for the career page
+			{
+			$("#eventjobcontainer").hide();
+			$("#eventresultcontainer").show();
+			}
+		else if ($("#simplemodal-container").html()!=undefined){ // if the modal is showing
 			modal.close();
 		}
 		else if ($("#header").find('#backButton').length==1)
@@ -211,9 +223,19 @@
      <!--RPCV Panels -->
      <div title='RPCV' id="rpcvmenu" class="panel" data-defer="rpcv.html" data-load="removeLoad"></div> 
      <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2"></div>
+     
+     <!--Event Tab -->
+     
+     <div title='Events' id="events" class="panel" data-defer="events.html" data-load="epart2"></div>
+     
     <!-- <script>function careerInit(div){/*alert("career init");*/part2();}</script>-->
      <div title='Resources' id="rpcvresources" class="panel" data-defer="rpcv/resources.html"></div>
-     
+    <!-- About Panels -->       
+    <div title='Fast Facts' id="fastfacts" class="panel" data-defer="info/fastfacts.html">
+    </div>
+    <div title='Core Expectations' id="expectations" class="panel" data-defer="info/expectations.html">
+    </div>
+    
     <!-- Eligibility Panels -->       
     <div title='Medical History' id="medhistory" class="panel" data-defer="info/eligibility/medhistory.html">
     </div>
@@ -274,7 +296,7 @@
     </div>
 
 <!-- Events Panels -->
-     <div title='Events' id="events" class="panel" data-defer="events.html" data-load="removeLoad"></div> 
+     <!--<div title='Events' id="events" class="panel" data-defer="events.html" data-load="removeLoad"></div> -->
 
     </div><!-- end content -->
    
@@ -288,7 +310,7 @@
         <a href="#media" id='navbar_media'><i class="icon-picture navbaricon"></i><span>Media</span></a>
         <a href="#events" id='navbar_events'><i class="icon-calendar navbaricon"></i><span>Events</span></a>
         <a href="#rpcvmenu" id='navbar_rpcv' class='icon user icon2'><i class="icon-globe navbaricon"></i><span>RPCV</span></a>
-        <a href="#donate" id='navbar_donate' ><i class="icon-credit-card navbaricon"></i><span>Donate</span></a>
+        <a href="#career" id='navbar_donate' ><i class="icon-briefcase navbaricon"></i><span>Career</span></a>
     </div>  
     </div><!--end afUI -->
 
