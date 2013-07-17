@@ -115,15 +115,14 @@ eupdateSearch = function(urlstring,pagenumber) {
 		{$('#eventprevbutton').addClass('ui-disabled')
 		$('#eventprevbutton').attr("disabled","true");}
 		
-		$("#eventpagelabel").text("Page "+ecurrpage + " of " + epages);
-		$("#eventbottomcontainer").show()
+		
 		$("#eventdatatable").html(edatastring.find('#resultTable'));
 		edataarray = $('#eventdatatable tr:has(td)').map(function(i, v) {
 			var $td =  $('td', this);
 				return {id: ++i,
 						 postdate: $td.eq(0).text().trim(),
 						 eventname: $($td.eq(1)).find('a').text(),
-						 elink: "http://www.peacecorps.gov/"+$td.eq(1).html().trim().substring(10, $td.eq(1).html().trim().indexOf(">")-1),          
+						 elink: ($td.eq(1).html()!=undefined)? "http://www.peacecorps.gov/"+$td.eq(1).html().trim().substring(10, $td.eq(1).html().trim().indexOf(">")-1):"",          
 						 location:$td.eq(2).text().trim(),
 						 zipcode:$td.eq(3).text().trim(),
 						 state:$td.eq(4).text().trim(),
@@ -140,6 +139,10 @@ eupdateSearch = function(urlstring,pagenumber) {
 		}
 		data+='</ul>';
 		//console.log(data);
+		if($('.no-results').length==1){data="";ecurrpage=0;$('#eventnextbutton').addClass('ui-disabled');
+		  $('#eventnextbutton').attr("disabled","true");}
+		$("#eventpagelabel").text("Page "+ecurrpage + " of " + epages);
+		$("#eventbottomcontainer").show()
 		$("#eventresulttable").html(data);
     	//$("#pagelabel").html(edatastring.find('span.step-links').html());
 		/*$("#reslist").listview({

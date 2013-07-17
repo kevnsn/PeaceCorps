@@ -31,7 +31,15 @@
 <script type="text/javascript" charset="utf-8" src="assets/js/jquery.simplemodal.1.4.4.min.js"></script>
 
 <!-- For web interface functionality -->
-<script type="text/javascript" charset="utf-8" src="assets/js/jquery.xdomainajax.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="assets/js/jquery.xdomainajax.js"></script>-->
+
+<!-- For google analytics -->
+<script type="text/javascript" src="assets/js/GALocalStorage.js"></script>
+<script>
+    ga_storage._setAccount('UA-42549177-1'); //Replace with your own
+    ga_storage._trackPageview('Index');
+
+</script>
 
 
 <!-- Initilization Javascript -->
@@ -65,7 +73,7 @@
 
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
     function onDeviceReady() {
-		alert("Device ready, button intitated");
+		<!--alert("Device ready, button intitated");-->
 		//devplatorm = device.platform;
 		//devversion = device.version;
 		document.addEventListener("backbutton", function(e){
@@ -104,10 +112,10 @@
             <div id="content">
                 <script>
 				function InitInfo(div) {
-				//console.log("Information initialized");	
+				console.log("Information initialized");	
 				removeLoad();
 				//alert("device:"+device.version);
-				//navigator.splashscreen.hide();
+				navigator.splashscreen.hide();
 				}
 				</script>
                 <!-- here is where you can add your panels -->               
@@ -228,7 +236,11 @@
      <div title='Career' id="career" class="panel" data-defer="rpcv/career.html" data-load="part2" data-tab="navbar_career"></div>
      <div title='RPCV Career Center' id="careercenter" class="panel" data-defer="rpcv/careercenter.html"></div> 
      <div title='Coverdell' id="coverdell" class="panel" data-defer="rpcv/coverdell.html"></div> 
-     <div title='PCResponse' id="pcresponse" class="panel" data-defer="rpcv/pcresponse.html"></div> 
+     <div title='PCResponse' id="pcresponse" class="panel" data-defer="rpcv/pcresponse.html"></div>         
+         <div title='Presentation Materials' id="materials" class="panel" data-defer="rpcv/materials.html"></div> 
+     <div title='Peace Corps Week' id="pcweek" class="panel" data-defer="rpcv/pcweek.html"></div> 
+     <div title='Speakers Match Program' id="speakers" class="panel" data-defer="rpcv/speakers.html"></div> 
+      <div title='NPCA' id="npca" class="panel" data-defer="rpcv/npca.html"></div>  
      
      <!--Event Tab -->
      

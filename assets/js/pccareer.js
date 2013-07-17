@@ -193,8 +193,8 @@ updateSearch = function(urlstring,pagenumber) {
 		{$('#prevbutton').addClass('ui-disabled')
 		$('#prevbutton').attr("disabled","true");}
 		
-		$("#pagelabel").text("Page "+currpage + " of " + pages);
-		$("#bottomcontainer").show()
+		//$("#pagelabel").text("Page "+currpage + " of " + pages);
+		//$("#bottomcontainer").show()
 		$("#datatable").html(datastring.find('#resultTable'));
 		dataarray = $('#datatable tr:has(td)').map(function(i, v) {
 			var $td =  $('td', this);
@@ -210,6 +210,12 @@ updateSearch = function(urlstring,pagenumber) {
 				}
 		}).get();
 		//console.log(dataarray);
+		if(dataarray.length==0){currpage=0;$('#nextbutton').addClass('ui-disabled');
+		  $('#nextbutton').attr("disabled","true");
+		  $(".collapsed").trigger('click');
+		  }
+		$("#pagelabel").text("Page "+currpage + " of " + pages);
+		$("#bottomcontainer").show()
 		var data='<ul class="list" id="reslist" >';
 		var length = dataarray.length;
 		var locationtext;
@@ -274,6 +280,8 @@ changePage = function(joburl) {
 		} 
 
 part2=function(){
+	$('#navbar_rpcv').removeClass('pressed');
+	$('#navbar_career').addClass('pressed');
 	  //Hide state and country input fields
 		$("#countrydiv").hide();
 		$("#statediv").hide();	
