@@ -129,8 +129,10 @@ footer .horzRule { margin:0px auto;}
 
 #eventjobtext, #jobtext {padding:10px;}
 #eventjobtext li, #jobtext li {margin-left:25px;}
-#eventjobtext h1, #jobtext h1 {text-shadow:none !important;display:block;}
+#eventjobtext h1, #jobtext h1 {text-shadow:none !important;display:block;clear:both!important;}
+#eventjobtext h2, #jobtext h2 {clear:both!important;height:inherit!important;}
 #eventjobtext h3, #jobtext h3 {margin-top:12px;clear:both!important;}
+#eventjobtext h4, #jobtext h4 {clear:both!important;}
 
 #eventpagelabel, #pagelabel {font-size:12px;}
 /*#prevbutton, #nextbutton {padding: 8px 12px 5px 12px;}*/

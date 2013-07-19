@@ -36,8 +36,8 @@
 <!-- For google analytics -->
 <script type="text/javascript" src="assets/js/GALocalStorage.js"></script>
 <script>
-    ga_storage._setAccount('UA-42549177-1'); //Replace with your own
-    ga_storage._trackPageview('Index');
+    ga_storage._setAccount('UA-41387766-2'); //Replace with your own
+    ga_storage._trackPageview('/index.html');
 
 </script>
 
@@ -49,6 +49,7 @@
         	$.ui.backButtonText = "Back";// We override the back button text to always say "Back"
 			//localStorage.clear();
 			console.log("init launch");
+			setTimeout(function(){navigator.splashscreen.hide()},1000);
 			//$("#navbar_donate").click(function(){$.ui.loadContent("donate",false,false,"fade");});
 			//navigator.splashscreen.hide();
         };
@@ -115,7 +116,6 @@
 				console.log("Information initialized");	
 				removeLoad();
 				//alert("device:"+device.version);
-				navigator.splashscreen.hide();
 				}
 				</script>
                 <!-- here is where you can add your panels -->               
